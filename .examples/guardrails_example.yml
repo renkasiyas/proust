@@ -1,0 +1,89 @@
+# ========================================
+#  Proust Memory & Context Guardrails
+#  Production configuration - all placeholders filled
+# ========================================
+
+guidelines:
+  always:
+    - "Read and follow architecture docs before making changes"
+    - "Reuse existing utilities and components before creating new ones"
+    - "Keep user‑visible strings in i18n configuration files"
+    - "Write tests for new functionality before implementation"
+    - "Update documentation when changing public APIs"
+  never:
+    - "Use raw hex colors in components - use design tokens"
+    - "Commit secrets, API keys, or environment files to version control"
+    - "Introduce new state‑management libraries without team approval"
+    - "Skip code review for production changes"
+    - "Merge failing tests to main branch"
+  if_unsure: |
+    "This change might break existing functionality or violate our coding standards. Please verify with the team before proceeding."
+
+integration_notes:
+  sdk: "taskflow_core"
+  api_version: "v2"
+  note: "Use the official Proust memory patterns for all context integrations"
+
+inline_guardrails_comment: |
+  // Proust: Follow memory patterns and maintain narrative coherence
+
+duplicate_method_check:
+  ci_script: |
+    #!/bin/bash
+    # Check for duplicate method signatures
+    grep -r "function\|def\|const.*=" src/ | sort | uniq -d
+    if [ $? -eq 0 ]; then
+      echo "Duplicate methods detected"
+      exit 1
+    fi
+  alt_tool: "eslint-plugin-no-duplicate-functions"
+
+example_usage:
+  bad_example: "const primaryColor = '#2563eb'" 
+  good_example: "const primaryColor = tokens.colors.primary.500"
+
+architecture_layers:
+  atoms_folder: "src/components/atoms"
+  molecules_examples:
+    - "TaskCard"
+    - "StatusBadge"
+    - "ActionButton"
+  organisms_examples:
+    - "ProjectDashboard"
+    - "TaskList"
+  agents_folder: "src/services"
+  services_folder: "src/api"
+
+enforcement:
+  lint_rules_block:
+    - "raw_color_values"
+    - "console_statements"
+    - "unused_imports"
+  pre_commit_checks:
+    - "test_coverage_minimum"
+    - "api_calls_in_services_only"
+    - "no_secrets_in_code"
+
+frozen_module_banner: |
+  // 🚫 FROZEN MODULE!
+  // This file is auto-generated. Do not edit manually.
+  // Changes will be overwritten on next build.
+
+definition_of_done:
+  - "All guardrails respected and validated"
+  - "Existing tests pass without modification"
+  - "New functionality covered by comprehensive tests"
+  - "Documentation updated to reflect changes"
+  - "Code review approved by at least one team member"
+
+main_rule:
+  description: |
+    Reuse before reinventing, test before shipping, document as you go.
+  enforce:
+    - "Reuse existing components and utilities"
+    - "No raw values - use configuration and design tokens"
+    - "API integrations only through approved service layer"
+    - "All user-facing changes require UX review"
+
+tldr: |
+  Follow the architecture. Test everything. Document changes. No shortcuts.
