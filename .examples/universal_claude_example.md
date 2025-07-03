@@ -1,7 +1,7 @@
 # CLAUDE.md – Proust Memory Archive Configuration
 
 _Author: Development Team_
- _Date: 2025-01-03_
+ _Date: 2025-07-03_
 
 > **Purpose**  
 > Provide Claude Code with baseline memory patterns for the Proust project.  
@@ -15,7 +15,7 @@ _Author: Development Team_
 | `project_name`      | Proust Memory Archive             |
 | `runtime_stack`     | Node.js + React                  |
 | `primary_language`  | TypeScript                        |
-| `maintainer_handle` | @taskflow-team                    |
+| `maintainer_handle` | @proust-team                      |
 
 ---
 

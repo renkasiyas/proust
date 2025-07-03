@@ -20,7 +20,7 @@ guidelines:
     "This change might break existing functionality or violate our coding standards. Please verify with the team before proceeding."
 
 integration_notes:
-  sdk: "taskflow_core"
+  sdk: "proust_framework"
   api_version: "v2"
   note: "Use the official Proust memory patterns for all context integrations"
 
@@ -39,7 +39,7 @@ duplicate_method_check:
   alt_tool: "eslint-plugin-no-duplicate-functions"
 
 example_usage:
-  bad_example: "const primaryColor = '#2563eb'" 
+  bad_example: "const primaryColor = '#2563eb'"
   good_example: "const primaryColor = tokens.colors.primary.500"
 
 architecture_layers:

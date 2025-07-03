@@ -89,11 +89,11 @@ deployment:
 # -------------------------------------------------
 hostnames:
   api_local: localhost:3001
-  api_staging: "staging-api.taskflow.dev"
-  api_production: "api.taskflow.app"
+  api_staging: "staging-api.proust.dev"
+  api_production: "api.proust.app"
   web_local: localhost:3000
-  web_staging: "staging.taskflow.dev"
-  web_production: "app.taskflow.app"
+  web_staging: "staging.proust.dev"
+  web_production: "app.proust.app"
 
 # -------------------------------------------------
 # 9 ▸ Folder Shortcuts
