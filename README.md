@@ -41,16 +41,23 @@ cd proust
 cp -r src/.proust src/.simone .examples /path/to/your/project/
 ```
 
-### Future: pip/uv Package (In Development)
+### Method 4: pip/uv Package ✅ LIVE
 ```bash
-# Coming soon - package publication planned
-# pip install proust-framework
-# proust install
+# Using pip (global install)
+pip install proust-framework
+proust install
+
+# Using uv (global CLI tool - recommended)
+uv tool install proust-framework
+proust install
+
+# Or run without installing
+uv run --with proust-framework proust install
 ```
 
 ## Quick Start
 
-1. **Install Framework**: Use any installation method above
+1. **Install Framework**: Use `uv tool install proust-framework` (recommended) or URL-based setup
 2. **Customize Templates**: Follow the customization steps below
 3. **Start Using**: Initialize your first project
 
