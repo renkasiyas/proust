@@ -216,6 +216,7 @@ Includes portions of the Simone project management framework by [Helmi](https://
 **Version:** 0.1.0  
 **Inspired by:** Marcel Proust's *In Search of Lost Time*  
 **Built for:** AI-assisted development with persistent memory  
-**Repository:** https://github.com/renkasiyas/proust.git
+**Repository:** https://github.com/renkasiyas/proust.git  
+**Package:** https://pypi.org/project/proust-framework/
 
 *In memory of Marcel Proust (1871-1922), whose exploration of involuntary memory showed us that the past is never truly lost, only waiting to be rediscovered.*
