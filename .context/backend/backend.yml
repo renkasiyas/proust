@@ -1,0 +1,60 @@
+name: "Kasanova Backend API"
+version: "0.5.0"
+description: "Privacy-preserving FastAPI backend for Kasanova.app mobile wallet"
+
+principles:
+  privacy_first: "Backend only handles token data and prices - NO address functionality"
+  clean_architecture: "Strict separation between domain, use cases, adapters, and infrastructure"
+  feature_driven: "All functionality controlled via comprehensive feature flag system"
+  async_only: "All FastAPI endpoints must be async for optimal performance"
+  structured_logging: "Rich-based logging focused on business events, not HTTP noise"
+
+technology_stack:
+  language: "Python 3.13"
+  framework: "FastAPI"
+  dependency_management: "uv"
+  logging: "Rich + structlog"
+  external_apis:
+    - "Kasplex API (KRC-20 indexing)"
+    - "CoinGecko API (price data)"
+  deployment: "Docker + Caddy reverse proxy"
+
+architecture_layers:
+  domain: "Pure business models (no I/O, no side effects)"
+  use_cases: "Business logic orchestration (async services)"
+  adapters: "FastAPI controllers (routing only, no business logic)"
+  infra: "External integrations (clients, logging, config)"
+
+guardrails:
+  - "No business logic in adapters or infra layers"
+  - "Absolute imports required (no relative dot imports)"
+  - "Pydantic for all DTOs"
+  - "All dependencies must be pinned versions"
+  - "Secrets never in logs or tracebacks"
+  - "No forbidden packages: sqlalchemy.orm, celery"
+
+deployment:
+  local:
+    port: 8000
+    environment: "development"
+    docker_compose: "docker-compose.local.yml"
+  development:
+    port: 8000
+    environment: "development"
+    docker_compose: "docker-compose.dev.yml"
+  qa:
+    port: 443
+    environment: "production"
+    reverse_proxy: "Caddy (backend.kasanova.app)"
+    docker_compose: "docker-compose-qa.yml"
+  production:
+    port: 443
+    environment: "production"
+    reverse_proxy: "Caddy (backend.kasanova.app)"
+    docker_compose: "docker-compose.yml"
+
+kasanova_hostnames:
+  local: localhost
+  development: dev-api.kasanova.io
+  qa: qa-api.kasanova.io
+  production: api.kasanova.io

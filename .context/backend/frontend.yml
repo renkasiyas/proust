@@ -1,0 +1,191 @@
+project:
+  name: kasanova.app
+  runtime: flutter
+  architecture: clean architecture
+  kaspa_integration:
+    sdk_package: kaspa_flutter_core
+    key_derivation_path: "m/44'/111111'/0'/0/0"
+    address_type: kaspa mainnet or testnet
+  theme_mode: dark_only
+  external_documentation_map: .context/external_docs.yml
+
+ui:
+  colors_file: shared/theme/kds/kds_tokens.dart
+  typography_file: shared/theme/kds/kds.dart
+  dimensions_file: shared/theme/kds/kds_tokens.dart
+  icons_file: shared/theme/icons.dart
+  animations_file: shared/theme/animations.dart
+  assets_file: shared/theme/assets.dart
+  atoms_folder: shared/theme/atoms/
+  kds_registry_file: shared/theme/kds/kds_registry.dart
+  all_text_constants_file: config/strings.dart
+  backend_endpoints_file: config/api_endpoints.dart
+
+ux_patterns:
+  toasts: shared/services/toast_service.dart
+  dialogs: shared/services/dialog_service.dart
+  biometric: shared/services/biometric_service.dart
+  navigation:
+    router_library: go_router
+    routes_file: config/routes.dart
+    navigation_service: shared/services/navigation_service.dart
+  feature_flags:
+    service: shared/services/feature_flag_service.dart
+    access: shared/providers/app_config_provider.dart
+
+architecture:
+  agents_folder: shared/agents/
+  domain_models_folder: models/
+  services_folder: shared/services/
+  layout_folder: shared/layout/
+  widgets_folder: shared/widgets/
+  modals_folder: shared/modals/
+  networking_service: shared/services/backend_service.dart
+  kaspa_services:
+    core: shared/services/kaspa_core_service.dart
+    signer: shared/services/kaspa_signer_service.dart
+    wallet: shared/services/wallet_service.dart
+  kasanova_backend_services:
+    backend_service: shared/services/backend_service.dart
+    websocket: shared/services/websocket_service.dart
+  secure_storage_service: shared/services/vault_service.dart
+  secure_storage_keys_service: shared/services/storage_keys.dart
+  analytics_service: shared/services/analytics_service.dart
+  price_service: shared/services/price_service.dart
+  pass_service: shared/services/pass_service.dart
+  state_management:
+    allowed: riverpod
+    forbidden: bloc, provider (outside riverpod), redux
+  providers_folder: shared/providers/
+
+testing:
+  constants_file: test/test_constants.dart
+  mocking_library: mocktail
+  mocks_folder: test/mocks/
+  logging_service: core/utils/logger.dart
+  feature_toggles: env + flag-based
+
+guardrails:
+  enforce_tokens_only: true
+  avoid_inline_colors: true
+  avoid_inline_spacing: true
+  typography_scale_mandatory: true
+  no_raw_prints: true
+  duplicate_methods: forbidden
+  ai_allowed_to_create_new_components: true
+  ai_allowed_to_edit_tokens: false
+  if_unsure: must ask user or check manifest
+
+folders:
+  root_lib:
+    - config/
+    - core/
+    - features/
+    - models/
+    - shared/
+    - main_scaffold.dart
+    - main.dart
+
+features:
+  about_kasanova:
+    modal: features/about_kasanova/about_kasanova_modal.dart
+  devmode:
+    screens:
+      - features/devmode/analytics_test_screen.dart
+      - features/devmode/design_system_dev_screen.dart
+      - features/devmode/development_mode_screen.dart
+  holdings:
+    provider: features/holdings/holdings_provider.dart
+    screen: features/holdings/holdings_screen.dart
+  marketplace:
+    screen: features/marketplace/marketplace_screen.dart
+  pass: {}
+  settings:
+    screen: features/settings/settings_screen.dart
+  splash:
+    screen: features/splash/splash_screen.dart
+  tokens:
+    screen: features/tokens/token_detail_screen.dart
+  transactions:
+    activity:
+      screen:
+        - features/transactions/activity/activity_screen.dart
+      modals:
+        - features/transactions/activity/explorer_webview_modal.dart
+        - features/transactions/activity/transaction_details_modal.dart
+    receive:
+      modal: features/transactions/receive/receive_modal.dart
+    send:
+      modal: features/transactions/send/send_modal.dart
+  user_profile:
+    screen: features/user_profile/edit_profile_screen.dart
+  wallet_information:
+    screen: features/wallet/wallet_info_screen.dart
+
+shared:
+  agents:
+    - biometric_agent.dart
+    - home_agent.dart
+    - onboarding_agent.dart
+    - startup_agent.dart
+    - wallet_agent.dart
+  layout:
+    - bottom_nav.dart
+    - main_header.dart
+    - screen_header.dart
+  modals:
+    - explorer_webview_screen.dart
+    - qr/qr_scanner_modal.dart
+  providers:
+    - app_config_provider.dart
+    - backend_provider.dart
+  services:
+    - analytics_service.dart
+    - app_config_service.dart
+    - backend_service.dart
+    - biometric_service.dart
+    - dialog_service.dart
+    - feature_flag_service.dart
+    - kaspa_core_service.dart
+    - kaspa_signer_service.dart
+    - navigation_service.dart
+    - network_config.dart
+    - pass_service.dart
+    - price_service.dart
+    - storage_keys.dart
+    - toast_service.dart
+    - vault_service.dart
+    - wallet_service.dart
+    - websocket_service.dart
+  theme:
+    animations: animations.dart
+    assets: assets.dart
+    atoms:
+      - kds_button.dart
+      - kds_card.dart
+      - kds_modal.dart
+    icons: icons.dart
+    kds:
+      - kds_registry.dart
+      - kds_tokens.dart
+      - kds.dart
+  widgets:
+    - auth_guard.dart
+    - neon_text.dart
+    - network_indicator.dart
+    - price_chart.dart
+    - skeleton_loader.dart
+    - token_balance_card.dart
+    - token_header.dart
+    - token_meta_row.dart
+    - token_row.dart
+    - user_profile_card.dart
+
+core:
+  utils:
+    - logger.dart
+    - number_formatter.dart
+
+hostnames:
+  kasanova_backend: api.kasanova.io
+  kasanova_website: kasanova.app
