@@ -1,6 +1,6 @@
 # Proust Framework
 
-> *"The real voyage of discovery consists not in seeking new landscapes, but in having new eyes."* - Marcel Proust
+*"In reality, every reader is, while reading, the reader of his own self."* — Marcel Proust
 
 An AI memory and context management framework for software development, inspired by Marcel Proust's revolutionary exploration of memory, time, and narrative coherence.
 
@@ -13,38 +13,91 @@ Proust transforms AI-assisted development from scattered interactions into coher
 #### Proust — The Memory & Context Archivist  
 Keeps long-term knowledge, cross-project recall, and narrative coherence. Named after Marcel Proust, whose literary exploration of involuntary memory revolutionized our understanding of time and consciousness. Proust the AI persona maintains contextual awareness across sessions, ensuring every development decision fits into the larger story.
 
-## Quick Start
+## Installation
 
-### 🚀 Get Started
-
+### Method 1: URL-Based Setup (Recommended)
 ```bash
-# Clone the framework
+curl -sSL https://raw.githubusercontent.com/renkasiyas/proust/main/SETUP_FROM_URL.md | bash -s -- setup
+```
+
+### Method 2: Manual Setup
+```bash
+# Create framework directories
+mkdir -p src/.proust/commands/simone src/.proust/manifesto src/.simone/{01_PROJECT_DOCS,02_REQUIREMENTS,03_SPRINTS,04_GENERAL_TASKS,05_ARCHITECTURAL_DECISIONS,99_TEMPLATES} .examples
+
+# Download core framework files
+curl -o src/.proust/ethos.md https://raw.githubusercontent.com/renkasiyas/proust/main/src/.proust/ethos.md
+curl -o src/.proust/universal_claude.md https://raw.githubusercontent.com/renkasiyas/proust/main/src/.proust/universal_claude.md
+curl -o src/.proust/guardrails.yml https://raw.githubusercontent.com/renkasiyas/proust/main/src/.proust/guardrails.yml
+curl -o src/.proust/brand.yml https://raw.githubusercontent.com/renkasiyas/proust/main/src/.proust/brand.yml
+
+# Download complete framework (see automated script in SETUP_FROM_URL.md)
+```
+
+### Method 3: Git Clone
+```bash
 git clone https://github.com/renkasiyas/proust.git
 cd proust
-
-# Copy to your project
-cp -r src/.proust your-project/.proust
-cp -r src/.simone your-project/.simone
-
-# Read the full guide
-cat FRAMEWORK_README.md
+cp -r src/.proust src/.simone .examples /path/to/your/project/
 ```
 
-### 📋 Template Customization
-
+### Future: pip/uv Package (In Development)
 ```bash
-# Use the step-by-step guide
-cat TEMPLATE_GUIDE.md
-
-# See working examples
-ls .examples/
-
-# Key files to customize:
-# - .proust/ethos.md (project memory and values)
-# - .proust/guardrails.yml (AI behavioral patterns)  
-# - .proust/brand.yml (visual and verbal identity)
-# - .proust/universal_claude.md (Claude configuration)
+# Coming soon - package publication planned
+# pip install proust-framework
+# proust install
 ```
+
+## Quick Start
+
+1. **Install Framework**: Use any installation method above
+2. **Customize Templates**: Follow the customization steps below
+3. **Start Using**: Initialize your first project
+
+## Customization
+
+### Step 1: Replace Template Placeholders
+
+All templates use this placeholder format:
+```
+{{PLACEHOLDER_NAME}}
+```
+
+**Examples:**
+- `{{PROJECT_NAME}}` → Replace with your actual project name
+- `{{YYYY-MM-DD}}` → Replace with current date in ISO format
+- `{{COMPANY_NAME}}` → Replace with your organization name
+
+### Step 2: Key Files to Customize
+
+Work through templates in this order:
+
+**1. Project Identity**
+- `src/.proust/ethos.md` - Mission, vision, principles
+- `src/.proust/manifesto/manifesto.yml` - Technical architecture
+
+**2. Configuration Files**
+- `src/.proust/universal_claude.md` - Claude Code settings
+- `src/.proust/guardrails.yml` - AI coding standards
+- `src/.proust/brand.yml` - Design system
+
+**3. Project Structure**
+- `src/.simone/00_PROJECT_MANIFEST.md` - Project status
+- Templates in `src/.simone/99_TEMPLATES/`
+
+### Step 3: Use Examples for Reference
+
+Check `.examples/` directory for:
+- Complete framework configurations
+- All placeholders filled with example content
+- Production-ready memory patterns
+
+### Step 4: Remove Template Instructions
+
+After customization:
+- Delete instruction blocks at top of files
+- Remove lines starting with "# HOW TO USE THIS TEMPLATE"
+- Clean up any remaining `{{PLACEHOLDER}}` references
 
 ## Core Philosophy
 
@@ -68,11 +121,31 @@ Surface details reveal deeper patterns through persistent contextual awareness.
 - **Identity Preservation** - Brand and voice consistency over time
 - **Knowledge Architecture** - Structured information organization
 
-### `.simone/` - Project Narrative System  
-- **Story Structure** - Milestone → Chapter → Scene progression
-- **Character Development** - Team and project evolution
-- **Plot Decisions** - Architecture and design choices
-- **Narrative Health** - Story coherence and progression
+### `.simone/` - Project Management System  
+Built on the Simone project management framework:
+- **Milestones** - Major project phases (M01, M02...)
+- **Sprints** - Focused work periods within milestones (S01, S02...)
+- **Tasks** - Atomic units of work (T01, T02...)
+- **Documentation** - Requirements, architecture, and decisions
+- **Templates** - Standardized formats for consistency
+
+**Directory Structure:**
+```
+src/
+├── .proust/                 # Memory Archive
+│   ├── ethos.md            # Project identity
+│   ├── universal_claude.md # AI protocols
+│   ├── guardrails.yml      # Quality standards
+│   ├── brand.yml           # Design system
+│   └── commands/simone/    # Structured workflows
+└── .simone/                # Project Structure
+    ├── 00_PROJECT_MANIFEST.md
+    ├── 01_PROJECT_DOCS/
+    ├── 02_REQUIREMENTS/
+    ├── 03_SPRINTS/
+    ├── 04_GENERAL_TASKS/
+    └── 99_TEMPLATES/
+```
 
 ## Key Features
 
@@ -82,6 +155,31 @@ Surface details reveal deeper patterns through persistent contextual awareness.
 - 📚 **Rich Context Patterns** - Deep contextual understanding
 - ⚡ **Instant Memory Recall** - AI assistants remember everything
 - 🎯 **Coherent Decision Making** - Every choice fits the larger narrative
+
+## Usage
+
+### Initialize New Project
+1. Install the framework using installation method above
+2. Customize core files (`ethos.md`, `guardrails.yml`, `brand.yml`)
+3. Create your first project manifest in `src/.simone/00_PROJECT_MANIFEST.md`
+4. Start using commands for structured workflows
+
+### Daily Development
+- Use commands from `src/.proust/commands/simone/` for structured workflows
+- Maintain project context through the `.simone/` structure
+- Let AI assistants access rich context for better development
+
+### Quality Assurance
+- Regular project reviews maintain narrative coherence
+- Built-in validation ensures framework integrity
+- Memory patterns persist across team members and sessions
+
+## Advanced Documentation
+
+- **[Command Reference](docs/command-execution.md)** - Complete command guide and execution model
+- **[Status Values](docs/status-values.md)** - Task and project status definitions
+- **[Claude Integration](docs/claude-integration.md)** - Claude Code slash commands mapping
+- **[Framework Auditing](docs/audit-super-prompt.md)** - Validation and integrity checking
 
 ## Use Cases
 
@@ -102,14 +200,6 @@ Surface details reveal deeper patterns through persistent contextual awareness.
 - Establish consistent AI behavior patterns
 - Create project-specific AI capabilities
 - Build contextual AI workflows
-
-## Documentation
-
-- **[FRAMEWORK_README.md](FRAMEWORK_README.md)** - Complete framework guide
-- **[TEMPLATE_GUIDE.md](TEMPLATE_GUIDE.md)** - Step-by-step customization
-- **[COMMAND_EXECUTION.md](COMMAND_EXECUTION.md)** - How commands work
-- **[STATUS_VALUES.md](STATUS_VALUES.md)** - State definitions
-- **[.examples/](.examples/)** - Working configuration examples
 
 ## Philosophy in Practice
 
@@ -135,9 +225,11 @@ The Proust Framework evolves through community memory and narrative. Contributio
 
 MIT License - Build your own memories and narratives.
 
+Includes portions of the Simone project management framework.
+
 ---
 
-**Version:** 2.1.0  
+**Version:** 1.0.0  
 **Inspired by:** Marcel Proust's *In Search of Lost Time*  
 **Built for:** AI-assisted development with persistent memory  
 **Repository:** https://github.com/renkasiyas/proust.git
