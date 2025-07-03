@@ -8,10 +8,10 @@ brand:
 
 identity:
   logo:
-    primary: "assets/logo/taskflow-primary.svg"
+    primary: "assets/logo/proust-primary.svg"
     variants:
-      dark_bg: "assets/logo/taskflow-dark.svg"
-      light_bg: "assets/logo/taskflow-light.svg"
+      dark_bg: "assets/logo/proust-dark.svg"
+      light_bg: "assets/logo/proust-light.svg"
     usage_rules:
       - Keep clear-space equal to logo "T" height.
       - Minimum height: "32px digital / 8mm print."
@@ -46,7 +46,7 @@ identity:
       neon_violet: "#a78bfa"
       neon_fuchsia: "#f472b6"
       international_orange: "#fb923c"
-      taskflow_teal: "#14b8a6"
+      proust_teal: "#14b8a6"
       text_high: "#f8fafc"
       text_medium: "#cbd5e1"
       text_low: "#64748b"

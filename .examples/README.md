@@ -54,4 +54,4 @@ You can use these examples as-is for learning, or replace "Proust" references wi
 
 ---
 
-_Last updated: 2025-01-03_
+_Last updated: 2025-07-03_

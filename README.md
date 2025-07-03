@@ -8,6 +8,8 @@ An AI memory and context management framework for software development, inspired
 
 Proust transforms AI-assisted development from scattered interactions into coherent narrative experiences. Like its namesake's *In Search of Lost Time*, the framework helps AI assistants maintain deep contextual memory, creating development experiences where every action builds on accumulated understanding.
 
+**The Trinity:** **Claude + Simone + Proust** work together as an integrated development experience where Claude provides the AI intelligence, [Simone](https://github.com/Helmi/claude-simone) structures the project management workflow, and Proust maintains the persistent memory and context that connects everything across time.
+
 ### Personas
 
 #### Proust — The Memory & Context Archivist  
@@ -15,40 +17,15 @@ Keeps long-term knowledge, cross-project recall, and narrative coherence. Named 
 
 ## Installation
 
-### Method 1: URL-Based Setup (Recommended)
+Install the Proust Framework using pip or uv:
+
 ```bash
-curl -sSL https://raw.githubusercontent.com/renkasiyas/proust/main/SETUP_FROM_URL.md | bash -s -- setup
-```
-
-### Method 2: Manual Setup
-```bash
-# Create framework directories
-mkdir -p src/.proust/commands/simone src/.proust/manifesto src/.simone/{01_PROJECT_DOCS,02_REQUIREMENTS,03_SPRINTS,04_GENERAL_TASKS,05_ARCHITECTURAL_DECISIONS,99_TEMPLATES} .examples
-
-# Download core framework files
-curl -o src/.proust/ethos.md https://raw.githubusercontent.com/renkasiyas/proust/main/src/.proust/ethos.md
-curl -o src/.proust/universal_claude.md https://raw.githubusercontent.com/renkasiyas/proust/main/src/.proust/universal_claude.md
-curl -o src/.proust/guardrails.yml https://raw.githubusercontent.com/renkasiyas/proust/main/src/.proust/guardrails.yml
-curl -o src/.proust/brand.yml https://raw.githubusercontent.com/renkasiyas/proust/main/src/.proust/brand.yml
-
-# Download complete framework (see automated script in SETUP_FROM_URL.md)
-```
-
-### Method 3: Git Clone
-```bash
-git clone https://github.com/renkasiyas/proust.git
-cd proust
-cp -r src/.proust src/.simone .examples /path/to/your/project/
-```
-
-### Method 4: pip/uv Package ✅ LIVE
-```bash
-# Using pip (global install)
-pip install proust-framework
+# Using uv (recommended)
+uv tool install proust-framework
 proust install
 
-# Using uv (global CLI tool - recommended)
-uv tool install proust-framework
+# Using pip
+pip install proust-framework
 proust install
 
 # Or run without installing
@@ -57,7 +34,7 @@ uv run --with proust-framework proust install
 
 ## Quick Start
 
-1. **Install Framework**: Use `uv tool install proust-framework` (recommended) or URL-based setup
+1. **Install Framework**: Use `uv tool install proust-framework`
 2. **Customize Templates**: Follow the customization steps below
 3. **Start Using**: Initialize your first project
 
@@ -129,7 +106,7 @@ Surface details reveal deeper patterns through persistent contextual awareness.
 - **Knowledge Architecture** - Structured information organization
 
 ### `.simone/` - Project Management System  
-Built on the Simone project management framework:
+Built on the Simone project management framework by [Helmi](https://github.com/Helmi/claude-simone):
 - **Milestones** - Major project phases (M01, M02...)
 - **Sprints** - Focused work periods within milestones (S01, S02...)
 - **Tasks** - Atomic units of work (T01, T02...)
@@ -232,11 +209,11 @@ The Proust Framework evolves through community memory and narrative. Contributio
 
 MIT License - Build your own memories and narratives.
 
-Includes portions of the Simone project management framework.
+Includes portions of the Simone project management framework by [Helmi](https://github.com/Helmi/claude-simone). See [ACKNOWLEDGMENTS.md](ACKNOWLEDGMENTS.md) for full attribution.
 
 ---
 
-**Version:** 1.0.0  
+**Version:** 0.1.0  
 **Inspired by:** Marcel Proust's *In Search of Lost Time*  
 **Built for:** AI-assisted development with persistent memory  
 **Repository:** https://github.com/renkasiyas/proust.git

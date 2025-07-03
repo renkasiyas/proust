@@ -1,5 +1,7 @@
 # Simone Framework
 
+> **Attribution:** This implementation is based on the original Simone project by [Helmi](https://github.com/Helmi/claude-simone). See [ACKNOWLEDGMENTS.md](../../ACKNOWLEDGMENTS.md) for full attribution.
+
 Simone is a project management system designed to work with Claude Code's strengths and limitations. It provides structure for breaking down software projects into manageable, context-aware tasks.
 
 ## Core Concept
