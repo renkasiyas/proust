@@ -144,10 +144,14 @@ class FrameworkInstaller:
         """Install root documentation files."""
         docs = [
             ("README.md", self.project_root / "README.md"),
-            ("FRAMEWORK_README.md", self.project_root / "FRAMEWORK_README.md"),
-            ("TEMPLATE_GUIDE.md", self.project_root / "TEMPLATE_GUIDE.md"),
-            ("AUDIT_SUPER_PROMPT.md", self.project_root / "AUDIT_SUPER_PROMPT.md"),
+            ("docs/command-execution.md", self.project_root / "docs" / "command-execution.md"),
+            ("docs/status-values.md", self.project_root / "docs" / "status-values.md"),
+            ("docs/claude-integration.md", self.project_root / "docs" / "claude-integration.md"),
+            ("docs/audit-super-prompt.md", self.project_root / "docs" / "audit-super-prompt.md"),
         ]
+        
+        # Create docs directory
+        (self.project_root / "docs").mkdir(exist_ok=True)
         
         failed = []
         for remote_path, local_path in docs:
