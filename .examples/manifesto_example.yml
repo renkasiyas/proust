@@ -1,0 +1,122 @@
+# =====================================================================
+#  Proust Memory Archive Manifest
+#  -------------------------------------------------------------------
+#  Production configuration with all placeholders filled
+# =====================================================================
+
+# -------------------------------------------------
+#  1 ▸ Project Identity
+# -------------------------------------------------
+project:
+  name: "Proust - AI Memory & Context Management Framework"
+  version: "2.1.0"
+  description: "Structured project management framework with AI integration for development teams"
+  runtime: "Node.js 20.x + React 18"
+  architecture: "Clean Architecture with feature-based modules"
+
+# -------------------------------------------------
+# 2 ▸ Core Principles
+# -------------------------------------------------
+principles:
+  documentation_first: "Every feature starts with clear requirements and acceptance criteria"
+  automation_serves: "Tools reduce manual work without adding complexity"
+  quality_built_in: "Testing and review are integrated into every workflow step"
+  transparency_default: "Progress and decisions are visible to all team members"
+  continuous_improvement: "Regular retrospectives drive process refinement"
+
+# -------------------------------------------------
+# 3 ▸ Technology Stack
+# -------------------------------------------------
+technology_stack:
+  language: "TypeScript 5.x"
+  framework: "React 18 + Next.js 14"
+  dependency_management: "npm with exact versioning"
+  logging: "Winston with structured JSON output"
+  databases: ["PostgreSQL 15", "Redis for caching"]
+  external_apis: ["GitHub API", "Slack API", "Claude API"]
+  deployment: "Docker + Kubernetes on AWS"
+
+# -------------------------------------------------
+# 4 ▸ Architecture Layers / Folders
+# -------------------------------------------------
+architecture_layers:
+  domain: "src/domain/ - business logic and entities"
+  use_cases: "src/use-cases/ - application services"
+  adapters: "src/adapters/ - external integrations"
+  infra: "src/infrastructure/ - databases and external services"
+  presentation: "src/components/ - React UI components"
+  api: "src/api/ - REST endpoints and GraphQL resolvers"
+
+# -------------------------------------------------
+# 5 ▸ Guardrails  (coding commandments)
+# -------------------------------------------------
+guardrails:
+  - "No business logic in React components or API controllers"
+  - "Pin all package versions—never use caret (^) or tilde (~)"
+  - "Never commit secrets, API keys, or .env files"
+  - "All database queries go through repository layer"
+  - "API responses use standardized error formats"
+  - "Components must be tested before merging"
+
+# -------------------------------------------------
+# 6 ▸ Testing Strategy
+# -------------------------------------------------
+testing:
+  framework: "Jest + React Testing Library + Playwright"
+  coverage_target: "80%"
+  mocking_library: "MSW for API mocking"
+  feature_toggles: "Environment-based with LaunchDarkly"
+
+# -------------------------------------------------
+# 7 ▸ Deployment Targets
+# -------------------------------------------------
+deployment:
+  local:
+    port: 3000
+    env: development
+    notes: "Docker Compose with hot reload"
+  staging:
+    port: 443
+    env: staging
+    reverse_proxy: "Nginx with SSL termination"
+  production:
+    port: 443
+    env: production
+    reverse_proxy: "AWS Application Load Balancer"
+
+# -------------------------------------------------
+# 8 ▸ Hostname Map
+# -------------------------------------------------
+hostnames:
+  api_local: localhost:3001
+  api_staging: "staging-api.taskflow.dev"
+  api_production: "api.taskflow.app"
+  web_local: localhost:3000
+  web_staging: "staging.taskflow.dev"
+  web_production: "app.taskflow.app"
+
+# -------------------------------------------------
+# 9 ▸ Folder Shortcuts
+# -------------------------------------------------
+folders:
+  src: "src/ - main application source"
+  tests: "src/__tests__/ and component co-located tests"
+  docs: "docs/ - technical documentation"
+  config: "config/ - environment and build configuration"
+
+# -------------------------------------------------
+# 10 ▸ Feature Flags & Configuration
+# -------------------------------------------------
+features:
+  ai_suggestions: "LaunchDarkly flag: ai-task-suggestions"
+  real_time_sync: "LaunchDarkly flag: real-time-collaboration"
+  advanced_analytics: "LaunchDarkly flag: analytics-dashboard"
+
+# -------------------------------------------------
+# 11 ▸ Performance & Monitoring
+# -------------------------------------------------
+monitoring:
+  apm: "DataDog APM with custom dashboards"
+  logging: "Centralized with DataDog Logs"
+  metrics: "Prometheus + Grafana for infrastructure"
+  error_tracking: "Sentry for application errors"
