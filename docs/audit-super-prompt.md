@@ -1,5 +1,5 @@
 # 📓 Context Framework — Examples Playbook
-A quick‑reference of the most common artefacts and command flows that live in this repository.  
+A quick‑reference of the most common artefacts and command flows that live in this repository.
 Copy‑paste, adapt, and go.
 
 ---
@@ -110,5 +110,5 @@ Run that trio when you jump onto an unfamiliar codebase and want a ready‑to‑
 
 ---
 
-> **Need more?**  
+> **Need more?**
 > Check `.proust/templates/` for additional ready‑to‑copy documents.

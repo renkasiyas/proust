@@ -12,7 +12,7 @@ Proust transforms AI-assisted development from scattered interactions into coher
 
 ### Personas
 
-#### Proust — The Memory & Context Archivist  
+#### Proust — The Memory & Context Archivist
 Keeps long-term knowledge, cross-project recall, and narrative coherence. Named after Marcel Proust, whose literary exploration of involuntary memory revolutionized our understanding of time and consciousness. Proust the AI persona maintains contextual awareness across sessions, ensuring every development decision fits into the larger story.
 
 ## Installation
@@ -88,7 +88,7 @@ After customization:
 ### Memory as Foundation
 Context persists across sessions and projects, creating continuity where traditional development tools create fragmentation.
 
-### Narrative Coherence  
+### Narrative Coherence
 Every change fits into the larger story, ensuring development decisions build on accumulated understanding rather than starting fresh each time.
 
 ### Time and Reflection
@@ -105,7 +105,7 @@ Surface details reveal deeper patterns through persistent contextual awareness.
 - **Identity Preservation** - Brand and voice consistency over time
 - **Knowledge Architecture** - Structured information organization
 
-### `.simone/` - Project Management System  
+### `.simone/` - Project Management System
 Built on the Simone project management framework by [Helmi](https://github.com/Helmi/claude-simone):
 - **Milestones** - Major project phases (M01, M02...)
 - **Sprints** - Focused work periods within milestones (S01, S02...)
@@ -213,10 +213,10 @@ Includes portions of the Simone project management framework by [Helmi](https://
 
 ---
 
-**Version:** 0.3.0  
-**Inspired by:** Marcel Proust's *In Search of Lost Time*  
-**Built for:** AI-assisted development with persistent memory  
-**Repository:** https://github.com/renkasiyas/proust.git  
+**Version:** 0.3.0
+**Inspired by:** Marcel Proust's *In Search of Lost Time*
+**Built for:** AI-assisted development with persistent memory
+**Repository:** https://github.com/renkasiyas/proust.git
 **Package:** https://pypi.org/project/proust-framework/
 
 *In memory of Marcel Proust (1871-1922), whose exploration of involuntary memory showed us that the past is never truly lost, only waiting to be rediscovered.*

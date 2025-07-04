@@ -4,7 +4,7 @@ Proust Framework installer for setting up projects.
 
 import urllib.request
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 
 class FrameworkInstaller:
@@ -12,11 +12,77 @@ class FrameworkInstaller:
 
     BASE_URL = "https://raw.githubusercontent.com/renkasiyas/proust/main"
 
-    def __init__(self, project_root: str = "."):
+    def __init__(self, project_root: str = ".", location: Optional[str] = None):
         """Initialize installer for given project root."""
         self.project_root = Path(project_root).resolve()
-        self.proust_dir = self.project_root / ".proust"
-        self.simone_dir = self.project_root / ".simone"
+        self.location = location
+
+        if location:
+            # Resolve location relative to project root
+            base_path = (self.project_root / location).resolve()
+            self.proust_dir = base_path / ".proust"
+            self.simone_dir = base_path / ".simone"
+            self.is_external_location = not self._is_location_inside_project(base_path)
+        else:
+            # Default behavior
+            self.proust_dir = self.project_root / ".proust"
+            self.simone_dir = self.project_root / ".simone"
+            self.is_external_location = False
+
+    def _is_location_inside_project(self, base_path: Path) -> bool:
+        """Check if the base path is inside the project root."""
+        try:
+            base_path.resolve().relative_to(self.project_root.resolve())
+            return True
+        except ValueError:
+            return False
+
+    def _create_symlinks(self) -> None:
+        """Create symlinks in project root pointing to external directories."""
+        if not self.is_external_location:
+            return
+
+        self._create_symlink_safely(".proust", self.proust_dir)
+        self._create_symlink_safely(".simone", self.simone_dir)
+
+    def _create_symlink_safely(self, link_name: str, target_dir: Path) -> None:
+        """Safely create a symlink with proper error handling."""
+        project_link = self.project_root / link_name
+
+        # Check if link already exists
+        if project_link.exists():
+            if project_link.is_symlink():
+                existing_target = project_link.resolve()
+                if existing_target == target_dir.resolve():
+                    print(f"Symlink {link_name} already points to correct location")
+                    return
+                else:
+                    print(
+                        f"Warning: {link_name} symlink exists but points to {existing_target}"
+                    )
+                    print(f"Expected: {target_dir}")
+                    return
+            else:
+                print(
+                    f"Warning: {link_name} exists as a regular directory/file, cannot create symlink"
+                )
+                return
+
+        # Create the symlink
+        try:
+            project_link.symlink_to(target_dir)
+            print(f"✅ Created symlink: {project_link} -> {target_dir}")
+        except OSError as e:
+            if "Operation not permitted" in str(e):
+                print(
+                    f"❌ Permission denied creating {link_name} symlink. Try running with admin privileges."
+                )
+            elif "File exists" in str(e):
+                print(f"❌ {link_name} already exists, cannot create symlink")
+            else:
+                print(f"❌ Could not create {link_name} symlink: {e}")
+        except Exception as e:
+            print(f"❌ Unexpected error creating {link_name} symlink: {e}")
 
     def create_directories(self) -> None:
         """Create necessary directory structure."""
@@ -157,6 +223,11 @@ class FrameworkInstaller:
 
         print("Installing templates...")
         failed_files.extend(self.install_templates())
+
+        # Create symlinks if location is external
+        if self.is_external_location:
+            print("Creating symlinks for external location...")
+            self._create_symlinks()
 
         if failed_files:
             print(f"Failed to install {len(failed_files)} files:")

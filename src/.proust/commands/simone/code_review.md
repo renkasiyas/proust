@@ -16,42 +16,42 @@ Perform a **deep, zero-tolerance code review** of recent changes and record the 
 | `$DATE`           | Real-world date (UTC)                              | `2025-07-04`                                    |
 
 ## Preconditions
-1. Repo has Git history.  
-2. Agent can run shell commands (`git diff`, `grep`).  
+1. Repo has Git history.
+2. Agent can run shell commands (`git diff`, `grep`).
 3. `.simone/` structure exists.
 
 ## Steps
-1. **Determine scope**  
-   - If `$ARGUMENTS?` provided, parse into file list or commit range.  
+1. **Determine scope**
+   - If `$ARGUMENTS?` provided, parse into file list or commit range.
    - Else default: `git diff HEAD~1`.
-2. **Gather code changes**  
+2. **Gather code changes**
    ```bash
    git diff --name-status $SCOPE > /tmp/changed_files.txt
    git diff $SCOPE > /tmp/full_diff.patch
    ```
-3. **Locate related PM artifacts**  
-   - Read `src/.simone/00_PROJECT_MANIFEST.md` to find current sprint.  
-   - Open sprint meta in `src/.simone/03_SPRINTS/<current>/S*_sprint_meta.md`.  
+3. **Locate related PM artifacts**
+   - Read `src/.simone/00_PROJECT_MANIFEST.md` to find current sprint.
+   - Open sprint meta in `src/.simone/03_SPRINTS/<current>/S*_sprint_meta.md`.
    - If specific task ID appears in commit message, open that task file.
-4. **Compare against specifications**  
-   - Check changed code vs. requirements in `src/.simone/02_REQUIREMENTS/<milestone>/`.  
-   - Validate architectural guardrails via `src/.proust/guardrails.yml`.  
-5. **Security validation**  
-   - **Authentication checks:** Verify proper authentication/authorization for new endpoints  
-   - **Input validation:** Check all user inputs are validated and sanitized  
-   - **Secret detection:** Scan for hardcoded secrets, API keys, passwords, or tokens  
-   - **Permission verification:** Ensure appropriate access controls on resources  
-   - **Injection prevention:** Validate against SQL injection, XSS, and command injection  
-   - **Dependency security:** Check for known vulnerabilities in new dependencies  
-6. **Identify issues**  
-   - For each discrepancy, assign Severity **1–10**.  
-   - Record list `[issue, severity]`.  
-7. **Verdict**  
-   - **FAIL** if _any_ discrepancy exists.  
-   - **PASS** only if zero issues.  
-8. **Write Output Log**  
-   - Append block to task’s **## Output Log** section OR sprint meta if no task.  
-   - Block format:  
+4. **Compare against specifications**
+   - Check changed code vs. requirements in `src/.simone/02_REQUIREMENTS/<milestone>/`.
+   - Validate architectural guardrails via `src/.proust/guardrails.yml`.
+5. **Security validation**
+   - **Authentication checks:** Verify proper authentication/authorization for new endpoints
+   - **Input validation:** Check all user inputs are validated and sanitized
+   - **Secret detection:** Scan for hardcoded secrets, API keys, passwords, or tokens
+   - **Permission verification:** Ensure appropriate access controls on resources
+   - **Injection prevention:** Validate against SQL injection, XSS, and command injection
+   - **Dependency security:** Check for known vulnerabilities in new dependencies
+6. **Identify issues**
+   - For each discrepancy, assign Severity **1–10**.
+   - Record list `[issue, severity]`.
+7. **Verdict**
+   - **FAIL** if _any_ discrepancy exists.
+   - **PASS** only if zero issues.
+8. **Write Output Log**
+   - Append block to task’s **## Output Log** section OR sprint meta if no task.
+   - Block format:
      ```
      [YYYY-MM-DDTHH:MM:SSZ] Code Review - PASS/FAIL
      Result: **PASS/FAIL**
@@ -65,7 +65,7 @@ Perform a **deep, zero-tolerance code review** of recent changes and record the 
      **Summary:** <brief>
      **Recommendation:** <next steps>
      ```
-9. **Console Summary**  
+9. **Console Summary**
    - Print PASS/FAIL + issue count.
 
 ## Outputs
@@ -74,10 +74,10 @@ Perform a **deep, zero-tolerance code review** of recent changes and record the 
 | `src/.simone/03_SPRINTS/<current>/TASK_*/...` **or** sprint meta  | Persistent review log           |
 
 ## Definition of Done
-- Log entry written with timestamp.  
-- PASS/FAIL clearly stated.  
-- Each finding includes Severity (1–10).  
-- Console displays concise summary.  
+- Log entry written with timestamp.
+- PASS/FAIL clearly stated.
+- Each finding includes Severity (1–10).
+- Console displays concise summary.
 
 ## Follow-ups
-- For each Severity ≥7 issue, create task via `/project:simone:create_general_task`.  
+- For each Severity ≥7 issue, create task via `/project:simone:create_general_task`.

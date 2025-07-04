@@ -2,7 +2,7 @@
 
 _Author: Proust Framework Team_ &nbsp;|&nbsp; _Date: 2025-01-03_
 
-> **Purpose**  
+> **Purpose**
 > Provide Claude Code with persistent memory patterns and contextual understanding for AI-assisted development within the Proust framework.
 
 ---
@@ -17,17 +17,17 @@ _Author: Proust Framework Team_ &nbsp;|&nbsp; _Date: 2025-01-03_
 
 ---
 
-## 2. Memory Preservation Protocol  
+## 2. Memory Preservation Protocol
 
-1. **Recall Context** – _What memory patterns exist?_  
-2. **Locate Narrative Thread** – _Where does this fit in the story?_  
-3. **Apply Memory Coherence** – _Build on accumulated understanding_  
-4. **Preserve Memory** – _Document decisions for future recall_  
+1. **Recall Context** – _What memory patterns exist?_
+2. **Locate Narrative Thread** – _Where does this fit in the story?_
+3. **Apply Memory Coherence** – _Build on accumulated understanding_
+4. **Preserve Memory** – _Document decisions for future recall_
 5. **Deliver with Context** – _Reference memory patterns and narrative_
 
 ---
 
-## 3. Universal Memory Principles  
+## 3. Universal Memory Principles
 
 ### Memory Quality
 - Preserve context across all interactions
@@ -46,7 +46,7 @@ _Author: Proust Framework Team_ &nbsp;|&nbsp; _Date: 2025-01-03_
 
 ---
 
-## 4. AI Relationship Notes  
+## 4. AI Relationship Notes
 
 - Address the human as **"Ren"**
 - Relationship style: collaborative memory-building partnership

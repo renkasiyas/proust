@@ -22,39 +22,39 @@ Perform a **deep, contradiction-hunting audit** across *all* project documents
 
 ## Step-by-Step Checklist (the agent must follow verbatim)
 
-1. **Scan repo tree**  
+1. **Scan repo tree**
    `find . -type f -not -path "*/node_modules/*" -not -path "*/.git/*" | sort`
 
-2. **Iterate through files** in deterministic order.  
+2. **Iterate through files** in deterministic order.
    For each file:
    - Load content in full (chunked reads allowed).
    - Note doc type (code vs MD vs YAML vs others).
 
-3. **Detect contradictions**  
-   - Cross-compare statements that define rules/permissions/values.  
+3. **Detect contradictions**
+   - Cross-compare statements that define rules/permissions/values.
      § Example: guardrails say “No raw colors,” but README shows `#FF00FF`.
 
-4. **Check version & date coherence**  
+4. **Check version & date coherence**
    - Multiple “version” or “last_updated” fields should follow monotonic order.
    - Flag mismatching semantic-version strings.
 
-5. **Identify overlapping authority**  
+5. **Identify overlapping authority**
    - If two files claim to be “source of truth” for the same concept, note it.
 
-6. **Look for broken references / dead links**  
+6. **Look for broken references / dead links**
    - Any file paths, URLs, or image refs that do not resolve.
 
-7. **Detect duplicated or conflicting guardrails**  
+7. **Detect duplicated or conflicting guardrails**
    - Same rule written twice in different wording → flag.
    - Rule A forbids X, but rule B explicitly allows X → conflict.
 
-8. **Spot obsolete / TODO markers**  
+8. **Spot obsolete / TODO markers**
    - Any “TODO”, “FIXME”, “???”, or placeholder tokens ⇒ list with location.
 
-9. **Analyse hierarchy alignment**  
+9. **Analyse hierarchy alignment**
    - Manifest ⟂ guardrails ⟂ brand ⟂ ethos: do principles cascade logically?
 
-10. **Produce report**  
+10. **Produce report**
     - Markdown file `src/.proust/assessments/<DATE>_consistency_audit.md`
     - Structure:
 
@@ -83,7 +83,7 @@ path/to/file.md	Contradiction	42–45	Rule conflicts with guardrails.yml §“ne
 🎯 Recommendations
 	•	Highest-impact fixes first, grouped by effort.
 
-11. **Exit with one-sentence console summary**:  
+11. **Exit with one-sentence console summary**:
     `“Consistency audit complete – OVERALL_STATUS with X critical and Y minor findings.”`
 
 ---

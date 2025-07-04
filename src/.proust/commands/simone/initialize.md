@@ -14,44 +14,44 @@ Interactively initialize the Simone PM framework for a project—detect project 
 
 ## TODO (execute sequentially)
 
-1. **Scan & analyze project**  
-   - Detect language/tooling (`package.json`, `pubspec.yaml`, `requirements.txt`, etc.).  
-   - Determine project name from `README` or folder.  
-   - Identify if `.simone/` already exists.  
+1. **Scan & analyze project**
+   - Detect language/tooling (`package.json`, `pubspec.yaml`, `requirements.txt`, etc.).
+   - Determine project name from `README` or folder.
+   - Identify if `.simone/` already exists.
    - Keep findings brief.
 
-2. **Interactive confirmation**  
-   - Present findings:  
+2. **Interactive confirmation**
+   - Present findings:
      ```
      I found a [project type] project named “[name]”. Proceed with Simone setup? (yes/no)
-     ```  
+     ```
    - Await user response before continuing.
 
-3. **Check for existing Simone documents**  
-   - If `src/.simone/` exists, list docs (ARCHITECTURE.md, milestones, sprints).  
-   - Ask user whether to use, extend, or start fresh.  
+3. **Check for existing Simone documents**
+   - If `src/.simone/` exists, list docs (ARCHITECTURE.md, milestones, sprints).
+   - Ask user whether to use, extend, or start fresh.
    - Allow cancel.
 
-4. **Guide document creation**  
-   - If starting fresh / extending:  
-     - Run lightweight architecture analysis.  
-     - Draft `01_PROJECT_DOCS/ARCHITECTURE.md`; ask clarifying questions to fill gaps.  
-   - If importing existing docs: adapt them into Simone structure.  
+4. **Guide document creation**
+   - If starting fresh / extending:
+     - Run lightweight architecture analysis.
+     - Draft `01_PROJECT_DOCS/ARCHITECTURE.md`; ask clarifying questions to fill gaps.
+   - If importing existing docs: adapt them into Simone structure.
 
-5. **Create first milestone**  
-   - Suggest milestone based on project phase.  
-   - Interactively confirm milestone name & focus.  
+5. **Create first milestone**
+   - Suggest milestone based on project phase.
+   - Interactively confirm milestone name & focus.
    - Generate `src/.simone/02_REQUIREMENTS/$MILESTONE_ID/` with meta & initial requirements.
 
-6. **Generate project manifest**  
-   - Populate `src/.simone/00_PROJECT_MANIFEST.md` with:  
-     - Project metadata (name, type)  
-     - First milestone + status  
-     - Initial sprint list (empty)  
+6. **Generate project manifest**
+   - Populate `src/.simone/00_PROJECT_MANIFEST.md` with:
+     - Project metadata (name, type)
+     - First milestone + status
+     - Initial sprint list (empty)
      - Timestamp `$DATE`.
 
-7. **Provide next steps**  
-   - Print customised guidance:  
+7. **Provide next steps**
+   - Print customised guidance:
      ```
      ✅ Simone initialized for “[project name]”.
 
@@ -62,10 +62,10 @@ Interactively initialize the Simone PM framework for a project—detect project 
      ```
 
 ## Definition of Done
-- `src/.simone/` folder exists with required subfolders.  
-- `ARCHITECTURE.md`, milestone dir, and manifest created/updated.  
+- `src/.simone/` folder exists with required subfolders.
+- `ARCHITECTURE.md`, milestone dir, and manifest created/updated.
 - User confirmed completion.
 
 ## Follow-ups
-- Recommend `/project:simone:create_general_task` to begin tasks.  
+- Recommend `/project:simone:create_general_task` to begin tasks.
 - Suggest running `/project:simone:initialize_new_project` only if full reset required.

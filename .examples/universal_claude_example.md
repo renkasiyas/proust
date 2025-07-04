@@ -3,8 +3,8 @@
 _Author: Development Team_
  _Date: 2025-07-03_
 
-> **Purpose**  
-> Provide Claude Code with baseline memory patterns for the Proust project.  
+> **Purpose**
+> Provide Claude Code with baseline memory patterns for the Proust project.
 > This configuration ensures consistent development practices and quality standards.
 
 ---
@@ -19,17 +19,17 @@ _Author: Development Team_
 
 ---
 
-## 2. Senior‑Engineer Task Protocol  
+## 2. Senior‑Engineer Task Protocol
 
-1. **Clarify Scope** – _Review requirements and architecture docs first_  
-2. **Locate Insertion Point** – _Identify exact files and components to modify_  
-3. **Apply Minimal Change** – _Only change what's necessary for the task_  
-4. **Double‑Check** – _Run tests, verify no regressions introduced_  
+1. **Clarify Scope** – _Review requirements and architecture docs first_
+2. **Locate Insertion Point** – _Identify exact files and components to modify_
+3. **Apply Minimal Change** – _Only change what's necessary for the task_
+4. **Double‑Check** – _Run tests, verify no regressions introduced_
 5. **Deliver Clearly** – _Document changes and any new dependencies_
 
 ---
 
-## 3. Universal Development Principles  
+## 3. Universal Development Principles
 
 ### Code Quality
 - Use Prettier for formatting with project .prettierrc config
@@ -49,7 +49,7 @@ _Author: Development Team_
 
 ---
 
-## 4. Team Relationship Notes  
+## 4. Team Relationship Notes
 
 - Address the human as **"Ren"**
 - Relationship style: collaborative and direct

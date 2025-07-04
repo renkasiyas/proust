@@ -5,7 +5,7 @@
 - When updating Tasks Logs (Output Log) always fetch current date and time first
 - Update Output Log after every Subtask
 - Always be truthful in Logs. If you cannot complete a task for technical reasons, just write it down. Don't lie!
-- Only mark lines as done if you could acctually progress them.
+- Only mark lines as done if you could actually progress them.
 - Update the task file after every completed subtask and check Acceptance criteria as well if successful.
 
 ## Sprint Structure

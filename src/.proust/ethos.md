@@ -32,12 +32,12 @@ Proust creates a world where AI assistants remember everything that matters, bui
 ## Design Tenets
 
 1. Memory persists across all boundaries - sessions, projects, time
-2. Context deepens with every interaction 
+2. Context deepens with every interaction
 3. Understanding accumulates rather than resets
 
 ---
 
-## Decision Filters  
+## Decision Filters
 _When choosing between alternatives, prefer options that…_
 
 1. Preserve and build on existing memory
@@ -58,8 +58,8 @@ _When choosing between alternatives, prefer options that…_
 
 - **Product & Design**     → reference for feature decisions
 - **AI Assistants**        → core memory patterns and behavioral guidance
-- **Developers**           → contextual decision-making principles  
-- **QA**                   → verify releases reflect the ethos  
+- **Developers**           → contextual decision-making principles
+- **QA**                   → verify releases reflect the ethos
 - **Project Teams**        → shared memory and narrative understanding
 - **Memory Architects**    → framework design and evolution guidance
 

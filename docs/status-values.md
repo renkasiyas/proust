@@ -4,7 +4,7 @@ This document defines the standardized status values used throughout the framewo
 
 ## Task Status Values
 
-**Used in:** Task files (`T*.md`, `TX*.md`)  
+**Used in:** Task files (`T*.md`, `TX*.md`)
 **Location:** Front matter `status` field
 
 | Status           | Meaning                          | Next Status               |
@@ -26,7 +26,7 @@ status: in_progress
 
 ## Sprint Status Values
 
-**Used in:** Sprint meta files (`S*_sprint_meta.md`)  
+**Used in:** Sprint meta files (`S*_sprint_meta.md`)
 **Location:** Front matter `status` field
 
 | Status      | Meaning                            | Next Status              |
@@ -46,7 +46,7 @@ status: active
 
 ## Milestone Status Values
 
-**Used in:** Milestone meta files (`M*_milestone_meta.md`)  
+**Used in:** Milestone meta files (`M*_milestone_meta.md`)
 **Location:** Front matter `status` field
 
 | Status      | Meaning                                   | Next Status                          |
@@ -67,7 +67,7 @@ status: active
 
 ## Project Status Values
 
-**Used in:** Project manifest (`00_PROJECT_MANIFEST.md`)  
+**Used in:** Project manifest (`00_PROJECT_MANIFEST.md`)
 **Location:** Front matter `status` field
 
 | Status     | Meaning                             | Description          |
@@ -86,7 +86,7 @@ status: active
 
 ## ADR Status Values
 
-**Used in:** Architecture Decision Records (`ADR*.md`)  
+**Used in:** Architecture Decision Records (`ADR*.md`)
 **Location:** Front matter `status` field
 
 | Status       | Meaning                           | Next Status                  |
@@ -111,7 +111,7 @@ status: accepted
 open → in_progress → pending_review → done
   ↓         ↓              ↓
 blocked   failed      failed
-  ↓         ↓              ↓  
+  ↓         ↓              ↓
 open      open        open
 ```
 
@@ -125,9 +125,9 @@ pending → active → completed
 ### Milestone Lifecycle
 ```
 pending → active → completed
-            ↓  ↑        
-         blocked/     
-         on_hold      
+            ↓  ↑
+         blocked/
+         on_hold
 ```
 
 ## Validation Rules

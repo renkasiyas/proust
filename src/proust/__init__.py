@@ -5,7 +5,7 @@ A framework for managing AI context and project memory inspired by
 Marcel Proust's exploration of memory and narrative coherence.
 """
 
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 __author__ = "Ren Kasiyas"
 __email__ = "okasiyas@gmail.com"
 

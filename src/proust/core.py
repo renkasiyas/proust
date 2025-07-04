@@ -9,11 +9,34 @@ from typing import Dict, List, Optional
 class ProustFramework:
     """Main Proust Framework class for managing AI context and project memory."""
 
-    def __init__(self, project_root: str = "."):
+    def __init__(self, project_root: str = ".", location: Optional[str] = None):
         """Initialize Proust Framework in the given project root."""
         self.project_root = Path(project_root).resolve()
-        self.proust_dir = self.project_root / ".proust"
-        self.simone_dir = self.project_root / ".simone"
+
+        if location:
+            # Resolve location relative to project root
+            base_path = (self.project_root / location).resolve()
+            self.proust_dir = base_path / ".proust"
+            self.simone_dir = base_path / ".simone"
+        else:
+            # Default behavior - check for symlinks first
+            project_proust = self.project_root / ".proust"
+            project_simone = self.project_root / ".simone"
+
+            # Resolve symlinks to actual locations
+            self.proust_dir = (
+                project_proust.resolve() if project_proust.exists() else project_proust
+            )
+            self.simone_dir = (
+                project_simone.resolve() if project_simone.exists() else project_simone
+            )
+
+    def is_using_symlinks(self) -> bool:
+        """Check if the framework directories are symlinked."""
+        project_proust = self.project_root / ".proust"
+        project_simone = self.project_root / ".simone"
+
+        return (project_proust.is_symlink()) or (project_simone.is_symlink())
 
     def is_initialized(self) -> bool:
         """Check if Proust framework is initialized in the project."""
@@ -56,7 +79,12 @@ class ProustFramework:
 
     def validate_framework(self) -> Dict[str, List[str]]:
         """Validate framework integrity and return issues."""
-        issues: Dict[str, List[str]] = {"critical": [], "high": [], "medium": [], "low": []}
+        issues: Dict[str, List[str]] = {
+            "critical": [],
+            "high": [],
+            "medium": [],
+            "low": [],
+        }
 
         # Check core files exist
         core_files = ["ethos.md", "universal_claude.md", "guardrails.yml", "brand.yml"]

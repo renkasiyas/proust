@@ -112,5 +112,5 @@ node_modules/
 .env.test.local
 .env.production.local
 /CLAUDE.md
-test-install*
-test_install*
+test-*
+test_*

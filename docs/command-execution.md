@@ -178,7 +178,7 @@ Error: Not a git repository
 
 1. **Parse command:** Extract command name and arguments
 2. **Load command definition:** Read from `src/.proust/commands/simone/`
-3. **Load context files:** As specified in command definition  
+3. **Load context files:** As specified in command definition
 4. **Execute steps:** Follow command's TODO list sequentially
 5. **Update state:** Modify project files as needed
 6. **Report results:** Summary and next steps

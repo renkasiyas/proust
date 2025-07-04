@@ -83,9 +83,9 @@ Include detailed component interaction flows and data models.
 ---
 
 ## Definition of Done (for any sub-command)
-- Specified files created/updated without overwriting unrelated content  
-- Timestamp appended to every generated doc  
-- No guardrail violations in generated Markdown / diagrams  
+- Specified files created/updated without overwriting unrelated content
+- Timestamp appended to every generated doc
+- No guardrail violations in generated Markdown / diagrams
 
 ## Follow-ups
 - After `analyze_context` with high impact (score ≥7), create tasks via `/project:simone:create_general_task`.

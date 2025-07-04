@@ -3,7 +3,6 @@ Command line interface for Proust Framework.
 """
 
 import click
-from pathlib import Path
 from .core import ProustFramework
 from .installer import FrameworkInstaller
 from . import __version__
@@ -18,9 +17,14 @@ def main() -> None:
 
 @main.command()
 @click.option("--project-root", default=".", help="Project root directory")
-def install(project_root: str) -> None:
+@click.option(
+    "--location",
+    envvar="PROUST_LOCATION",
+    help="Base location for .proust and .simone directories (relative to project root)",
+)
+def install(project_root: str, location: str) -> None:
     """Install Proust framework in the current or specified project."""
-    installer = FrameworkInstaller(project_root)
+    installer = FrameworkInstaller(project_root, location)
 
     if installer.install_all():
         click.echo("🎉 Proust framework installed successfully!")
@@ -33,9 +37,14 @@ def install(project_root: str) -> None:
 
 @main.command()
 @click.option("--project-root", default=".", help="Project root directory")
-def status(project_root: str) -> None:
+@click.option(
+    "--location",
+    envvar="PROUST_LOCATION",
+    help="Base location for .proust and .simone directories (relative to project root)",
+)
+def status(project_root: str, location: str) -> None:
     """Check Proust framework status in the project."""
-    framework = ProustFramework(project_root)
+    framework = ProustFramework(project_root, location)
 
     if framework.is_initialized():
         click.echo("✅ Proust framework is initialized")
@@ -69,17 +78,21 @@ def status(project_root: str) -> None:
 
 @main.command()
 @click.option("--project-root", default=".", help="Project root directory")
-def commands(project_root: str) -> None:
+@click.option(
+    "--location",
+    envvar="PROUST_LOCATION",
+    help="Base location for .proust and .simone directories (relative to project root)",
+)
+def commands(project_root: str, location: str) -> None:
     """List available Simone commands."""
-    framework = ProustFramework(project_root)
+    framework = ProustFramework(project_root, location)
 
     if not framework.is_initialized():
         click.echo("❌ Proust framework is not initialized")
         click.echo("Run 'proust install' to set up the framework")
         return
 
-    commands = framework.get_commands()
-    if commands:
+    if commands := framework.get_commands():
         click.echo(f"📋 Available Simone commands ({len(commands)}):")
         for command in commands:
             command_path = framework.get_command_path(command)
@@ -94,9 +107,14 @@ def commands(project_root: str) -> None:
 @main.command()
 @click.argument("command")
 @click.option("--project-root", default=".", help="Project root directory")
-def show(command: str, project_root: str) -> None:
+@click.option(
+    "--location",
+    envvar="PROUST_LOCATION",
+    help="Base location for .proust and .simone directories (relative to project root)",
+)
+def show(command: str, project_root: str, location: str) -> None:
     """Show details of a specific Simone command."""
-    framework = ProustFramework(project_root)
+    framework = ProustFramework(project_root, location)
 
     if not framework.is_initialized():
         click.echo("❌ Proust framework is not initialized")
@@ -117,9 +135,14 @@ def show(command: str, project_root: str) -> None:
 
 @main.command()
 @click.option("--project-root", default=".", help="Project root directory")
-def validate(project_root: str) -> None:
+@click.option(
+    "--location",
+    envvar="PROUST_LOCATION",
+    help="Base location for .proust and .simone directories (relative to project root)",
+)
+def validate(project_root: str, location: str) -> None:
     """Validate Proust framework integrity."""
-    framework = ProustFramework(project_root)
+    framework = ProustFramework(project_root, location)
 
     if not framework.is_initialized():
         click.echo("❌ Proust framework is not initialized")

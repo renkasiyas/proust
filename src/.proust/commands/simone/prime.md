@@ -11,11 +11,11 @@ Quickly **prime the agent’s context** with high-level project information and 
 *(none)* – this command is non-interactive.
 
 ## Steps
-1. **Parallel read** architecture & manifest files.  
-2. Extract:  
-   - Project name, domain, stack from ARCHITECTURE.md.  
-   - Current milestone, active sprint, task and sprint counts from MANIFEST.  
-3. **Print concise summary** to console:  
+1. **Parallel read** architecture & manifest files.
+2. Extract:
+   - Project name, domain, stack from ARCHITECTURE.md.
+   - Current milestone, active sprint, task and sprint counts from MANIFEST.
+3. **Print concise summary** to console:
    ```
    🛠  Project: <name>  |  Stack: <tech stack>
    🚩 Milestone: <id>  |  Active Sprint: <sprint id>  |  Tasks Open: <n>
@@ -23,7 +23,7 @@ Quickly **prime the agent’s context** with high-level project information and 
 4. Set internal session variables so subsequent commands inherit these facts.
 
 ## Definition of Done
-- Summary printed with project + milestone + sprint info.  
+- Summary printed with project + milestone + sprint info.
 - No mutations to project files.
 
 ## Follow-ups

@@ -74,23 +74,23 @@ identity:
     scale:
       h1:
         {
-          size: { { H1_SIZE } },
-          weight: { { H1_WEIGHT } },
-          letterSpacing: { { H1_LETTERSPACING } },
+          size: "{{H1_SIZE}}",
+          weight: "{{H1_WEIGHT}}",
+          letterSpacing: "{{H1_LETTERSPACING}}",
         }
-      h2: { size: { { H2_SIZE } }, weight: { { H2_WEIGHT } } }
-      h3: { size: { { H3_SIZE } }, weight: { { H3_WEIGHT } } }
+      h2: { size: "{{H2_SIZE}}", weight: "{{H2_WEIGHT}}" }
+      h3: { size: "{{H3_SIZE}}", weight: "{{H3_WEIGHT}}" }
       body:
         {
-          size: { { BODY_SIZE } },
-          weight: { { BODY_WEIGHT } },
-          lineHeight: { { BODY_LINEHEIGHT } },
+          size: "{{BODY_SIZE}}",
+          weight: "{{BODY_WEIGHT}}",
+          lineHeight: "{{BODY_LINEHEIGHT}}",
         }
       caption:
         {
-          size: { { CAPTION_SIZE } },
-          weight: { { CAPTION_WEIGHT } },
-          lineHeight: { { CAPTION_LINEHEIGHT } },
+          size: "{{CAPTION_SIZE}}",
+          weight: "{{CAPTION_WEIGHT}}",
+          lineHeight: "{{CAPTION_LINEHEIGHT}}",
         }
 
 gradients:
@@ -118,12 +118,12 @@ imagery:
     - "{{PATH_TO_EXAMPLE_IMAGE_1}}"
     - "{{PATH_TO_EXAMPLE_IMAGE_2}}"
   iconography:
-    stroke_width: { { ICON_STROKE_WIDTH } }
-    corner_radius: { { ICON_CORNER_RADIUS } }
+    stroke_width: "{{ICON_STROKE_WIDTH}}"
+    corner_radius: "{{ICON_CORNER_RADIUS}}"
 
 accessibility:
   wcag_target: "{{WCAG_LEVEL}}" # e.g. "AA"
-  color_contrast_minimum: { { CONTRAST_RATIO_MIN } } # e.g. 4.5
+  color_contrast_minimum: "{{CONTRAST_RATIO_MIN}}" # e.g. 4.5
 
 prohibited_usage:
   - "{{PROHIBITED_1}}"

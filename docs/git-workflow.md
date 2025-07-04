@@ -36,7 +36,7 @@ git commit -m "Release v0.x.x: Brief description of changes"
 ### 3. Automated Publishing
 When code is pushed to main with changes to:
 - `src/`
-- `pyproject.toml` 
+- `pyproject.toml`
 - `README.md`
 - `LICENSE`
 
@@ -56,7 +56,7 @@ gh release create v0.x.x --generate-notes
 
 ## Version Management
 
-- Update version in `src/proust/__init__.py` 
+- Update version in `src/proust/__init__.py`
 - Follow semantic versioning (MAJOR.MINOR.PATCH)
 - Keep versions unified across all branches
 

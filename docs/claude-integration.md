@@ -5,40 +5,40 @@ This document maps Proust framework commands to Claude Code slash commands for e
 ## Setup Commands
 
 ### /proust-install
-**Purpose**: Install Proust framework in current project  
-**Usage**: `/proust-install`  
+**Purpose**: Install Proust framework in current project
+**Usage**: `/proust-install`
 **Equivalent**: `proust install`
 
-### /proust-status  
-**Purpose**: Check framework status and validation  
-**Usage**: `/proust-status`  
+### /proust-status
+**Purpose**: Check framework status and validation
+**Usage**: `/proust-status`
 **Equivalent**: `proust status`
 
 ### /proust-validate
-**Purpose**: Validate framework integrity  
-**Usage**: `/proust-validate`  
+**Purpose**: Validate framework integrity
+**Usage**: `/proust-validate`
 **Equivalent**: `proust validate`
 
 ## Project Management Commands
 
 ### /simone-initialize
-**Purpose**: Initialize new project with Proust framework  
-**File**: `src/.proust/commands/simone/initialize.md`  
-**Context**: 
+**Purpose**: Initialize new project with Proust framework
+**File**: `src/.proust/commands/simone/initialize.md`
+**Context**:
 - `src/.proust/ethos.md`
 - `src/.proust/universal_claude.md`
 - `src/.proust/guardrails.yml`
 
 ### /simone-prime
-**Purpose**: Prime project context for AI interaction  
-**File**: `src/.proust/commands/simone/prime.md`  
+**Purpose**: Prime project context for AI interaction
+**File**: `src/.proust/commands/simone/prime.md`
 **Context**:
 - `src/.simone/00_PROJECT_MANIFEST.md`
 - `src/.simone/01_PROJECT_DOCS/ARCHITECTURE.md`
 
 ### /simone-project-review
-**Purpose**: Comprehensive project health check  
-**File**: `src/.proust/commands/simone/project_review.md`  
+**Purpose**: Comprehensive project health check
+**File**: `src/.proust/commands/simone/project_review.md`
 **Context**:
 - `src/.simone/00_PROJECT_MANIFEST.md`
 - `src/.proust/guardrails.yml`
@@ -46,29 +46,29 @@ This document maps Proust framework commands to Claude Code slash commands for e
 ## Development Commands
 
 ### /simone-analyze
-**Purpose**: Analyze codebase architecture and patterns  
-**File**: `src/.proust/commands/simone/analyze_codebase.md`  
+**Purpose**: Analyze codebase architecture and patterns
+**File**: `src/.proust/commands/simone/analyze_codebase.md`
 **Context**:
 - `src/.simone/01_PROJECT_DOCS/ARCHITECTURE.md`
 - `src/.proust/guardrails.yml`
 
 ### /simone-code-review
-**Purpose**: Review code against framework standards  
-**File**: `src/.proust/commands/simone/code_review.md`  
+**Purpose**: Review code against framework standards
+**File**: `src/.proust/commands/simone/code_review.md`
 **Context**:
 - `src/.proust/guardrails.yml`
 - `src/.proust/manifesto/manifesto.yml`
 
 ### /simone-test
-**Purpose**: Execute comprehensive testing workflow  
-**File**: `src/.proust/commands/simone/test.md`  
+**Purpose**: Execute comprehensive testing workflow
+**File**: `src/.proust/commands/simone/test.md`
 **Context**:
 - `src/.proust/guardrails.yml`
 - `src/.simone/00_PROJECT_MANIFEST.md`
 
 ### /simone-commit
-**Purpose**: Commit changes with narrative context  
-**File**: `src/.proust/commands/simone/commit.md`  
+**Purpose**: Commit changes with narrative context
+**File**: `src/.proust/commands/simone/commit.md`
 **Context**:
 - `src/.simone/00_PROJECT_MANIFEST.md`
 - `src/.proust/brand.yml`
@@ -76,22 +76,22 @@ This document maps Proust framework commands to Claude Code slash commands for e
 ## Task Management Commands
 
 ### /simone-create-task
-**Purpose**: Create new general task  
-**File**: `src/.proust/commands/simone/create_general_task.md`  
+**Purpose**: Create new general task
+**File**: `src/.proust/commands/simone/create_general_task.md`
 **Context**:
 - `src/.simone/00_PROJECT_MANIFEST.md`
 - `src/.simone/99_TEMPLATES/task_template.md`
 
 ### /simone-do-task
-**Purpose**: Execute specific task with full context  
-**File**: `src/.proust/commands/simone/do_task.md`  
+**Purpose**: Execute specific task with full context
+**File**: `src/.proust/commands/simone/do_task.md`
 **Context**:
 - Task file from `src/.simone/04_GENERAL_TASKS/`
 - `src/.proust/guardrails.yml`
 
 ### /simone-create-sprint-tasks
-**Purpose**: Create sprint tasks from milestone  
-**File**: `src/.proust/commands/simone/create_sprint_tasks.md`  
+**Purpose**: Create sprint tasks from milestone
+**File**: `src/.proust/commands/simone/create_sprint_tasks.md`
 **Context**:
 - Milestone files from `src/.simone/02_REQUIREMENTS/`
 - `src/.simone/99_TEMPLATES/task_template.md`
@@ -99,8 +99,8 @@ This document maps Proust framework commands to Claude Code slash commands for e
 ## Sprint Management Commands
 
 ### /simone-create-sprints
-**Purpose**: Create sprints from milestone  
-**File**: `src/.proust/commands/simone/create_sprints_from_milestone.md`  
+**Purpose**: Create sprints from milestone
+**File**: `src/.proust/commands/simone/create_sprints_from_milestone.md`
 **Context**:
 - Milestone files from `src/.simone/02_REQUIREMENTS/`
 - `src/.simone/99_TEMPLATES/sprint_meta_template.md`
@@ -108,15 +108,15 @@ This document maps Proust framework commands to Claude Code slash commands for e
 ## Quality Assurance Commands
 
 ### /simone-consistency-audit
-**Purpose**: Audit framework consistency  
-**File**: `src/.proust/commands/simone/consistency_audit.md`  
+**Purpose**: Audit framework consistency
+**File**: `src/.proust/commands/simone/consistency_audit.md`
 **Context**:
 - All framework files
 - `src/.proust/guardrails.yml`
 
 ### /simone-testing-review
-**Purpose**: Review testing coverage and quality  
-**File**: `src/.proust/commands/simone/testing_review.md`  
+**Purpose**: Review testing coverage and quality
+**File**: `src/.proust/commands/simone/testing_review.md`
 **Context**:
 - `src/.proust/guardrails.yml`
 - `src/.simone/00_PROJECT_MANIFEST.md`
@@ -124,15 +124,15 @@ This document maps Proust framework commands to Claude Code slash commands for e
 ## Creative Commands
 
 ### /simone-brainstorm
-**Purpose**: Brainstorm solutions with context  
-**File**: `src/.proust/commands/simone/brainstorm.md`  
+**Purpose**: Brainstorm solutions with context
+**File**: `src/.proust/commands/simone/brainstorm.md`
 **Context**:
 - `src/.simone/00_PROJECT_MANIFEST.md`
 - `src/.proust/ethos.md`
 
 ### /simone-reflect
-**Purpose**: Reflect on solution with full context  
-**File**: `src/.proust/commands/simone/reflect_on_solution.md`  
+**Purpose**: Reflect on solution with full context
+**File**: `src/.proust/commands/simone/reflect_on_solution.md`
 **Context**:
 - `src/.simone/00_PROJECT_MANIFEST.md`
 - `src/.proust/ethos.md`
@@ -140,30 +140,30 @@ This document maps Proust framework commands to Claude Code slash commands for e
 ## Integration Commands
 
 ### /simone-gh-issues
-**Purpose**: Process GitHub issues with context  
-**File**: `src/.proust/commands/simone/gh_do_issues.md`  
+**Purpose**: Process GitHub issues with context
+**File**: `src/.proust/commands/simone/gh_do_issues.md`
 **Context**:
 - `src/.simone/00_PROJECT_MANIFEST.md`
 - `src/.proust/brand.yml`
 
 ### /simone-context-management
-**Purpose**: Manage and organize project context  
-**File**: `src/.proust/commands/simone/context_management.md`  
+**Purpose**: Manage and organize project context
+**File**: `src/.proust/commands/simone/context_management.md`
 **Context**:
 - All `.proust/` and `.simone/` files
 
 ## Experimental Commands
 
 ### /simone-yolo
-**Purpose**: Quick experimental changes  
-**File**: `src/.proust/commands/simone/yolo.md`  
+**Purpose**: Quick experimental changes
+**File**: `src/.proust/commands/simone/yolo.md`
 **Context**:
 - `src/.simone/00_PROJECT_MANIFEST.md`
 - `src/.proust/guardrails.yml`
 
 ### /simone-discuss-review
-**Purpose**: Discuss and review with team context  
-**File**: `src/.proust/commands/simone/discuss_review.md`  
+**Purpose**: Discuss and review with team context
+**File**: `src/.proust/commands/simone/discuss_review.md`
 **Context**:
 - `src/.simone/00_PROJECT_MANIFEST.md`
 - `src/.proust/brand.yml`

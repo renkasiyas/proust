@@ -14,7 +14,7 @@ The Simone project management system integrated within the Proust Framework is b
 Simone is a directory-based project management system specifically designed to work with Claude Code's strengths and limitations. It provides structure for breaking down software projects into manageable, context-aware tasks organized as:
 
 - **Milestones** (M01, M02...) - Major project phases
-- **Sprints** (S01, S02...) - Focused work periods within milestones  
+- **Sprints** (S01, S02...) - Focused work periods within milestones
 - **Tasks** (T01, T02...) - Atomic units of work
 
 The core innovation of Simone is its approach to AI context management: starting fresh for each task while providing rich, relevant surrounding context.

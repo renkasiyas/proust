@@ -37,7 +37,7 @@ Proust transforms fragmented development into coherent narrative experiences. We
 
 ---
 
-## Decision Filters  
+## Decision Filters
 _When choosing between alternatives, prefer options that…_
 
 1. Reduce cognitive load on developers
@@ -56,9 +56,9 @@ _When choosing between alternatives, prefer options that…_
 
 ## How This Document Is Used
 
-- **Product & Design**     → reference for feature decisions  
-- **Developers**           → guide architectural trade‑offs  
-- **AI Agents / Chatbots** → ensure on‑brand responses  
-- **QA**                   → verify releases reflect the ethos  
+- **Product & Design**     → reference for feature decisions
+- **Developers**           → guide architectural trade‑offs
+- **AI Agents / Chatbots** → ensure on‑brand responses
+- **QA**                   → verify releases reflect the ethos
 
 _Last updated: 2025-01-03_
