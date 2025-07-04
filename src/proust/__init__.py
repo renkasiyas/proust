@@ -6,8 +6,8 @@ Marcel Proust's exploration of memory and narrative coherence.
 """
 
 __version__ = "0.3.0"
-__author__ = "Ren"
-__email__ = "ren@example.com"
+__author__ = "Ren Kasiyas"
+__email__ = "okasiyas@gmail.com"
 
 from .core import ProustFramework
 from .installer import FrameworkInstaller
