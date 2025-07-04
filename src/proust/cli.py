@@ -6,10 +6,11 @@ import click
 from pathlib import Path
 from .core import ProustFramework
 from .installer import FrameworkInstaller
+from . import __version__
 
 
 @click.group()
-@click.version_option()
+@click.version_option(version=__version__, package_name="proust-framework")
 def main() -> None:
     """Proust Framework - AI Memory & Context Archivist"""
     pass
