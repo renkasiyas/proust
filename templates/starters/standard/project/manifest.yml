@@ -1,0 +1,98 @@
+# Project Manifest
+
+# -------------------------------------------------
+#  Core Project Information
+# -------------------------------------------------
+project:
+  name: "Your Project Name"
+  description: "Brief description of what your project does and who it serves"
+  version: "0.1.0"
+  type: "webapp" # webapp | api | mobile-app | cli-tool | library
+
+# -------------------------------------------------
+#  Current Project State
+# -------------------------------------------------
+current_state:
+  milestone: "M01"
+  milestone_name: "Foundation Setup"
+  sprint: "M01_S01"
+  sprint_name: "Initial Development Environment"
+  last_updated: "2024-12-27T12:00:00Z"
+  status: "planning" # planning | in_progress | on_hold | completed
+
+# -------------------------------------------------
+#  Technical Information
+# -------------------------------------------------
+technical:
+  language: "typescript" # python | javascript | typescript | rust | go
+  framework: "react" # react | next.js | django | fastapi | express
+  architecture: "spa" # spa | ssr | microservices | monolith
+  deployment: "vercel" # vercel | aws | docker | heroku
+  database: "postgresql" # postgresql | mongodb | sqlite | mysql
+
+# -------------------------------------------------
+#  Progress Tracking
+# -------------------------------------------------
+milestones:
+  completed: []
+  active: ["M01"]
+  planned: ["M02", "M03"]
+
+sprints:
+  completed: []
+  active: ["M01_S01"]
+  planned: ["M01_S02", "M02_S01"]
+
+# -------------------------------------------------
+#  Team Context
+# -------------------------------------------------
+team:
+  size: "solo_developer" # solo_developer | small_team | 5_developers
+  timezone: "US_Pacific" # US_Pacific | US_Eastern | UTC | Europe/London
+  methodology: "agile" # agile | scrum | kanban | waterfall
+
+# -------------------------------------------------
+#  Quality Gates
+# -------------------------------------------------
+quality:
+  test_coverage: 80 # Target percentage
+  code_review: "required" # required | recommended | optional
+  documentation: "standard" # minimal | standard | comprehensive
+  validation: "automated" # manual | automated | ci-cd
+
+# -------------------------------------------------
+#  Dependencies
+# -------------------------------------------------
+dependencies:
+  required:
+    - "react>=18.0.0"
+    - "typescript>=5.0.0"
+  development:
+    - "jest>=29.0.0"
+    - "eslint>=8.0.0"
+
+# -------------------------------------------------
+#  Goals and Success Metrics
+# -------------------------------------------------
+goals:
+  primary: "Define your main project objective"
+  success_criteria:
+    - "Specific, measurable outcome 1"
+    - "Specific, measurable outcome 2"
+    - "Specific, measurable outcome 3"
+
+metrics:
+  velocity: "story_points_per_sprint" # features_per_week | story_points_per_sprint
+  quality: "bug_rate" # bug_rate | test_coverage | user_satisfaction
+  performance: "page_load_time" # page_load_time | api_response_time
+
+# -------------------------------------------------
+#  Project Notes
+# -------------------------------------------------
+notes: |
+  Add important context about your project:
+  - Key decisions made and rationale
+  - Technical constraints or requirements
+  - Business context and stakeholder needs
+  - Links to external documentation
+  - Team conventions or special considerations

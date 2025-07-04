@@ -1,0 +1,20 @@
+# =======================================================
+#  external_docs.yml – Template for External Documentation
+#  Describe APIs, repos, or docs your project depends on.
+#  Replace every {{PLACEHOLDER}} before committing.
+# =======================================================
+
+external_documentation:
+  # -----------------------------------------------------
+  #  Example entry – duplicate & edit for each source
+  # -----------------------------------------------------
+  - name: "{{DOC_NAME}}" # Human readable label
+    url: "{{DOC_URL}}" # e.g. "https://api.example.com/docs"
+    type: "{{DOC_TYPE}}" # e.g. "openapi", "code", "docs", "wiki"
+    cache: "{{CACHE_FREQUENCY}}" # e.g. "hourly", "daily", "weekly"
+    domains: # Keywords to help search agents
+      - "{{KEYWORD_1}}"
+      - "{{KEYWORD_2}}"
+      - "{{KEYWORD_3}}"
+
+  # Add additional entries below following the same schema.

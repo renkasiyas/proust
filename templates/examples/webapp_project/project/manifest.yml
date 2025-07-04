@@ -1,0 +1,88 @@
+# Project Manifest: TaskFlow Web App
+---
+# Core Project Information
+project:
+  name: "TaskFlow"
+  description: "Team productivity web application with real-time collaboration"
+  version: "2.1.4"
+  type: "webapp"
+
+# Current Project State
+current_state:
+  milestone: "M03"
+  milestone_name: "Real-time Collaboration"
+  sprint: "M03_S02"
+  sprint_name: "Live Document Editing"
+  last_updated: "2024-12-27T16:15:00Z"
+  status: "in_progress"
+
+# Technical Information
+technical:
+  language: "typescript"
+  framework: "next.js"
+  architecture: "jamstack"
+  deployment: "vercel"
+  database: "postgresql"
+
+# Progress Tracking
+milestones:
+  completed: ["M01", "M02"]
+  active: ["M03"]
+  planned: ["M04", "M05"]
+
+sprints:
+  completed: ["M01_S01", "M01_S02", "M02_S01", "M02_S02", "M03_S01"]
+  active: ["M03_S02"]
+  planned: ["M03_S03", "M04_S01"]
+
+# Team Context
+team:
+  size: "5_developers"
+  timezone: "US_Pacific"
+  methodology: "agile_2_week_sprints"
+
+# Quality Gates
+quality:
+  test_coverage: 92
+  code_review: "required"
+  documentation: "comprehensive"
+  accessibility: "wcag_2.1_aa"
+
+# External Dependencies
+dependencies:
+  frontend:
+    - "next.js@14.0.0"
+    - "react@18.2.0"
+    - "tailwindcss@3.3.0"
+  backend:
+    - "postgresql@15.0"
+    - "prisma@5.0.0"
+    - "socket.io@4.7.0"
+
+# Metrics and Goals
+goals:
+  primary: "Enable seamless real-time team collaboration"
+  success_criteria:
+    - "Sub-200ms page load times"
+    - "99.9% uptime SLA"
+    - "Real-time sync under 100ms latency"
+    - "Mobile-responsive design on all screens"
+
+metrics:
+  velocity: "32_story_points_per_sprint"
+  quality: "zero_critical_bugs_in_production"
+  performance: "core_web_vitals_green"
+
+# Notes and Context
+notes: |
+  TaskFlow started as an internal tool and evolved into a product
+  after seeing high adoption across engineering teams.
+
+  Key architectural decisions:
+  - Next.js for SSR and optimal performance
+  - PostgreSQL for reliable data consistency
+  - Socket.io for real-time features
+  - Tailwind for rapid UI development
+
+  Current focus: Real-time collaboration features that feel
+  magical but remain performant at scale.

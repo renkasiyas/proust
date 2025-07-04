@@ -1,0 +1,166 @@
+# =========================================
+#  Technical Architecture Template
+# =========================================
+# 📝 TODO: Define your project's technical architecture and design decisions.
+# Replace all {{PLACEHOLDER}} values with your project-specific information.
+# Delete this comment block after completing the template.
+# =========================================
+
+# -------------------------------------------------
+#  System Overview
+# -------------------------------------------------
+system:
+  architecture_type: "{{ARCHITECTURE_TYPE}}" # e.g. "microservices", "monolith", "serverless"
+  paradigm: "{{PARADIGM}}" # e.g. "event-driven", "REST API", "GraphQL"
+  deployment_model: "{{DEPLOYMENT_MODEL}}" # e.g. "containerized", "serverless", "traditional"
+
+# -------------------------------------------------
+#  Core Components & Layers
+# -------------------------------------------------
+components:
+  # 📝 TODO: Define your main system components
+  "{{COMPONENT_1}}":
+    description: "{{COMPONENT_1_DESCRIPTION}}"
+    responsibility: "{{COMPONENT_1_RESPONSIBILITY}}"
+    technology: "{{COMPONENT_1_TECH}}"
+
+  "{{COMPONENT_2}}":
+    description: "{{COMPONENT_2_DESCRIPTION}}"
+    responsibility: "{{COMPONENT_2_RESPONSIBILITY}}"
+    technology: "{{COMPONENT_2_TECH}}"
+
+# Architecture layers (if applicable)
+layers:
+  presentation: "{{PRESENTATION_LAYER}}" # e.g. "React frontend", "CLI interface"
+  business: "{{BUSINESS_LAYER}}" # e.g. "Core domain logic", "Services"
+  data: "{{DATA_LAYER}}" # e.g. "PostgreSQL", "File system", "APIs"
+  infrastructure: "{{INFRASTRUCTURE_LAYER}}" # e.g. "Docker", "AWS", "Local"
+
+# -------------------------------------------------
+#  Design Patterns & Conventions
+# -------------------------------------------------
+patterns:
+  # 📝 TODO: Document key architectural patterns you follow
+  primary_pattern: "{{PRIMARY_PATTERN}}" # e.g. "Repository pattern", "CQRS", "MVC"
+  naming_conventions:
+    files: "{{FILE_NAMING}}" # e.g. "snake_case.py", "kebab-case.js"
+    functions: "{{FUNCTION_NAMING}}" # e.g. "camelCase", "snake_case"
+    classes: "{{CLASS_NAMING}}" # e.g. "PascalCase", "UpperCamelCase"
+    constants: "{{CONSTANT_NAMING}}" # e.g. "UPPER_SNAKE_CASE"
+
+# -------------------------------------------------
+#  Data Flow & Integration
+# -------------------------------------------------
+data_flow:
+  # 📝 TODO: Describe how data flows through your system
+  input_sources:
+    - "{{INPUT_SOURCE_1}}" # e.g. "User interface", "API requests", "File uploads"
+    - "{{INPUT_SOURCE_2}}"
+
+  processing_stages:
+    - "{{PROCESSING_STAGE_1}}" # e.g. "Validation", "Business logic", "Persistence"
+    - "{{PROCESSING_STAGE_2}}"
+
+  output_destinations:
+    - "{{OUTPUT_DEST_1}}" # e.g. "Database", "File system", "External APIs"
+    - "{{OUTPUT_DEST_2}}"
+
+# External integrations
+integrations:
+  apis:
+    - name: "{{API_NAME_1}}"
+      purpose: "{{API_PURPOSE_1}}"
+      protocol: "{{API_PROTOCOL_1}}" # e.g. "REST", "GraphQL", "gRPC"
+
+  databases:
+    - name: "{{DB_NAME_1}}"
+      type: "{{DB_TYPE_1}}" # e.g. "PostgreSQL", "MongoDB", "Redis"
+      purpose: "{{DB_PURPOSE_1}}"
+
+# -------------------------------------------------
+#  Security Architecture
+# -------------------------------------------------
+security:
+  authentication: "{{AUTH_METHOD}}" # e.g. "JWT tokens", "OAuth2", "API keys"
+  authorization: "{{AUTHZ_METHOD}}" # e.g. "RBAC", "ACL", "Permissions"
+  data_protection:
+    - "{{PROTECTION_1}}" # e.g. "Encryption at rest", "TLS in transit"
+    - "{{PROTECTION_2}}"
+
+# -------------------------------------------------
+#  Performance & Scalability
+# -------------------------------------------------
+performance:
+  # 📝 TODO: Define performance characteristics and targets
+  targets:
+    response_time: "{{RESPONSE_TIME_TARGET}}" # e.g. "< 200ms", "< 1s"
+    throughput: "{{THROUGHPUT_TARGET}}" # e.g. "1000 req/sec", "10GB/day"
+    availability: "{{AVAILABILITY_TARGET}}" # e.g. "99.9%", "24/7"
+
+  scaling_strategy:
+    horizontal: "{{HORIZONTAL_SCALING}}" # e.g. "Load balancer + multiple instances"
+    vertical: "{{VERTICAL_SCALING}}" # e.g. "Increase server resources"
+    caching: "{{CACHING_STRATEGY}}" # e.g. "Redis cache", "CDN", "Application cache"
+
+# -------------------------------------------------
+#  Technology Decisions
+# -------------------------------------------------
+technology_choices:
+  # 📝 TODO: Document why you chose specific technologies
+  language:
+    choice: "{{LANGUAGE_CHOICE}}"
+    rationale: "{{LANGUAGE_RATIONALE}}"
+
+  framework:
+    choice: "{{FRAMEWORK_CHOICE}}"
+    rationale: "{{FRAMEWORK_RATIONALE}}"
+
+  database:
+    choice: "{{DATABASE_CHOICE}}"
+    rationale: "{{DATABASE_RATIONALE}}"
+
+# -------------------------------------------------
+#  Development Workflow
+# -------------------------------------------------
+development:
+  # 📝 TODO: Describe development and deployment workflow
+  environment_setup: "{{ENV_SETUP_PROCESS}}"
+  testing_strategy: "{{TESTING_APPROACH}}"
+  deployment_process: "{{DEPLOYMENT_STEPS}}"
+  monitoring: "{{MONITORING_APPROACH}}"
+
+# -------------------------------------------------
+#  Architecture Constraints
+# -------------------------------------------------
+constraints:
+  # 📝 TODO: Document any architectural constraints or limitations
+  technical:
+    - "{{TECHNICAL_CONSTRAINT_1}}" # e.g. "Must run on Python 3.8+", "No external dependencies"
+    - "{{TECHNICAL_CONSTRAINT_2}}"
+
+  business:
+    - "{{BUSINESS_CONSTRAINT_1}}" # e.g. "Must integrate with legacy system", "GDPR compliance"
+    - "{{BUSINESS_CONSTRAINT_2}}"
+
+# -------------------------------------------------
+#  Future Considerations
+# -------------------------------------------------
+roadmap:
+  # 📝 TODO: Note planned architectural evolution
+  planned_improvements:
+    - "{{IMPROVEMENT_1}}" # e.g. "Migrate to microservices", "Add caching layer"
+    - "{{IMPROVEMENT_2}}"
+
+  technical_debt:
+    - "{{DEBT_ITEM_1}}" # e.g. "Refactor legacy module", "Improve test coverage"
+    - "{{DEBT_ITEM_2}}"
+
+# -------------------------------------------------
+#  Metadata
+# -------------------------------------------------
+meta:
+  architect: "{{ARCHITECT_NAME}}"
+  last_updated: "{{YYYY-MM-DD}}"
+  version: "1.0.0"
+  review_date: "{{NEXT_REVIEW_DATE}}"
+# 📝 TODO: After completing this template, delete all TODO markers and placeholder text.

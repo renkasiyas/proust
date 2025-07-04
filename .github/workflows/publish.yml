@@ -1,0 +1,49 @@
+name: Publish to PyPI
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "src/**"
+      - "pyproject.toml"
+      - "README.md"
+      - "LICENSE"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Build package
+        run: uv build
+
+      - name: Publish to PyPI
+        run: uv publish --token ${{ secrets.PYPI_API_TOKEN }}
+
+      - name: Create GitHub Release
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ env.VERSION }}
+          release_name: Release v${{ env.VERSION }}
+          body: |
+            Automated release from main branch
+
+            ## Changes
+            - Package published to PyPI
+            - Version: ${{ env.VERSION }}
+          draft: false
+          prerelease: false
+        continue-on-error: true

@@ -1,0 +1,98 @@
+# ACME Corp Brand Guidelines
+
+brand:
+  name: "ACME Corporation"
+  tagline: "Widget Solutions That Scale"
+
+identity:
+  logo:
+    primary: "assets/logos/acme-logo.svg"
+    variants:
+      dark_bg: "assets/logos/acme-logo-white.svg"
+      light_bg: "assets/logos/acme-logo-dark.svg"
+    usage_rules:
+      - Keep clear-space equal to logo "A" letterform height.
+      - Minimum height: "32px digital / 15mm print."
+      - Do not alter colors, proportions, or rotate the logo.
+
+  colors:
+    # Core enterprise palette
+    primary: "#2563EB" # Professional blue
+    secondary: "#1E40AF" # Darker blue for depth
+    accent: "#F59E0B" # Warning/highlight amber
+    success: "#10B981" # Success green
+    warning: "#F59E0B" # Warning amber
+    danger: "#EF4444" # Error red
+
+    # Neutral enterprise scale
+    neutral:
+      900: "#111827" # Almost black
+      800: "#1F2937" # Dark gray
+      700: "#374151" # Medium dark gray
+      600: "#4B5563" # Medium gray
+      500: "#6B7280" # Mid gray
+      400: "#9CA3AF" # Light medium gray
+      300: "#D1D5DB" # Light gray
+      200: "#E5E7EB" # Very light gray
+      100: "#F3F4F6" # Off white
+      50: "#F9FAFB" # Near white
+
+    # Enterprise extended palette
+    enterprise:
+      corporate_blue: "#1E3A8A"
+      data_teal: "#0D9488"
+      insight_purple: "#7C3AED"
+      alert_orange: "#EA580C"
+      trust_green: "#059669"
+      text_primary: "#111827"
+      text_secondary: "#4B5563"
+      text_muted: "#9CA3AF"
+      border_light: "#E5E7EB"
+
+typography:
+  fonts:
+    primary: "Inter" # Clean, professional sans-serif
+    secondary: "JetBrains Mono" # Code and data display
+  scale:
+    xs: "12px"
+    sm: "14px"
+    base: "16px"
+    lg: "18px"
+    xl: "20px"
+    "2xl": "24px"
+    "3xl": "30px"
+    "4xl": "36px"
+
+spacing:
+  grid: "8px" # Base grid unit
+  component_padding: "16px"
+  section_margin: "32px"
+  page_margin: "64px"
+
+effects:
+  shadows:
+    card: "0 1px 3px 0 rgba(0, 0, 0, 0.1)"
+    elevated: "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
+    overlay: "0 20px 25px -5px rgba(0, 0, 0, 0.1)"
+
+  borders:
+    radius: "6px"
+    width: "1px"
+
+interaction:
+  animation_duration: "200ms"
+  hover_opacity: 0.8
+  focus_ring: "2px solid #2563EB"
+
+brand_voice:
+  tone: "Professional yet approachable"
+  style: "Clear, concise, action-oriented"
+  avoid: "jargon, overly technical language, marketing speak"
+
+usage_guidelines:
+  logo_clearspace: "Maintain spacing equal to the height of 'A' in ACME"
+  color_accessibility: "Ensure 4.5:1 contrast ratio for text"
+  typography_hierarchy: "Use font scale consistently for information hierarchy"
+
+version: "2.1"
+last_updated: "2024-12-27"

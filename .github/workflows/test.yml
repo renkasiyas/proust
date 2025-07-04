@@ -1,0 +1,177 @@
+name: Tests
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+        exclude:
+          # Reduce matrix size for efficiency
+          - os: macos-latest
+            python-version: "3.8"
+          - os: macos-latest
+            python-version: "3.9"
+          - os: windows-latest
+            python-version: "3.8"
+          - os: windows-latest
+            python-version: "3.9"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          version: "latest"
+
+      - name: Set up Python ${{ matrix.python-version }}
+        run: uv python install ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          uv sync --extra dev
+
+      - name: Run linting
+        run: |
+          uv run flake8 src/
+          uv run ruff check src/
+
+      - name: Run type checking
+        run: |
+          uv run mypy src/
+
+      - name: Run unit tests
+        run: |
+          uv run pytest -m unit --cov=src --cov-report=xml --cov-report=term-missing
+
+      - name: Run integration tests
+        run: |
+          uv run pytest -m integration --cov=src --cov-append --cov-report=xml --cov-report=term-missing
+
+      - name: Run CLI tests
+        run: |
+          uv run pytest -m cli --cov=src --cov-append --cov-report=xml --cov-report=term-missing
+
+      - name: Run symlink tests (Unix only)
+        if: runner.os != 'Windows'
+        run: |
+          uv run pytest -m symlink --cov=src --cov-append --cov-report=xml --cov-report=term-missing
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./coverage.xml
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: false
+
+  test-features:
+    runs-on: ubuntu-latest
+    name: Feature Tests
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Set up Python
+        run: uv python install 3.11
+
+      - name: Install dependencies
+        run: uv sync --extra dev
+
+      - name: Run BDD feature tests
+        run: |
+          uv run pytest tests/features/ -v --tb=short
+
+      - name: Generate test report
+        run: |
+          uv run pytest tests/features/ --html=feature-report.html --self-contained-html
+
+      - name: Upload feature test report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: feature-test-report
+          path: feature-report.html
+
+  test-full:
+    runs-on: ubuntu-latest
+    name: Full Test Suite
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Set up Python
+        run: uv python install 3.11
+
+      - name: Install dependencies
+        run: uv sync --extra dev
+
+      - name: Run complete test suite
+        run: |
+          uv run pytest --cov=src --cov-report=html --cov-report=xml --cov-report=term-missing --html=test-report.html --self-contained-html
+
+      - name: Check coverage threshold
+        run: |
+          uv run coverage report --fail-under=80
+
+      - name: Upload test artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-reports
+          path: |
+            htmlcov/
+            test-report.html
+            coverage.xml
+
+  security:
+    runs-on: ubuntu-latest
+    name: Security Checks
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Set up Python
+        run: uv python install 3.11
+
+      - name: Install dependencies
+        run: uv sync --extra dev
+
+      - name: Run safety check
+        run: |
+          uv pip install safety
+          uv run safety check
+
+      - name: Run bandit security check
+        run: |
+          uv pip install bandit
+          uv run bandit -r src/ -f json -o bandit-report.json
+        continue-on-error: true
+
+      - name: Upload security reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: security-reports
+          path: bandit-report.json

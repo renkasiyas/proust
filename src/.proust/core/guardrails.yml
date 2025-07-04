@@ -1,0 +1,70 @@
+# ========================================
+#  {{PRODUCT_NAME}} AI Guardrails Template
+#  Fill every {{PLACEHOLDER}} before use.
+#  Comment lines (starting with #) explain
+#  what belongs in each field—delete them
+#  once you complete the template.
+# ========================================
+
+guidelines:
+  always:
+    - "{{ALWAYS_RULE_1}}" # e.g. "Read and follow architecture docs."
+    - "{{ALWAYS_RULE_2}}" # e.g. "Reuse existing helpers before adding new ones."
+    - "{{ALWAYS_RULE_3}}" # e.g. "Keep user visible strings in i18n files."
+  never:
+    - "{{NEVER_RULE_1}}" # e.g. "Use raw hex colors in widgets."
+    - "{{NEVER_RULE_2}}" # e.g. "Commit secrets to version control."
+    - "{{NEVER_RULE_3}}" # e.g. "Introduce new state mgmt libs without approval."
+  if_unsure: |
+    "{{UNCERTAINTY_PROMPT}}"  # e.g. “This change might break guardrails—confirm?”
+
+integration_notes:
+  sdk: "{{SDK_NAME}}" # e.g. "app_flutter_core"
+  note: "{{SDK_NOTE}}" # Any special SDK guidance.
+
+inline_guardrails_comment: |
+  // {{INLINE_COMMENT}}  // Short comment injected at top of files.
+
+duplicate_method_check:
+  ci_script: |
+    {{CI_SCRIPT}}  # Shell/Python snippet to detect duplicate methods.
+  alt_tool: "{{ALT_DUPLICATE_TOOL}}" # e.g. "dart_code_metrics"
+
+example_usage:
+  bad_example: "{{BAD_EXAMPLE}}" # Demonstrate a violation.
+  good_example: "{{GOOD_EXAMPLE}}" # Show the correct form.
+
+architecture_layers:
+  # 📝 TODO: Define your project's architectural layers and their locations
+  presentation_layer: "{{PRESENTATION_PATH}}" # e.g. "src/components", "views/", "ui/"
+  business_layer: "{{BUSINESS_PATH}}" # e.g. "src/services", "domain/", "core/"
+  data_layer: "{{DATA_PATH}}" # e.g. "src/repositories", "data/", "models/"
+  infrastructure_layer: "{{INFRASTRUCTURE_PATH}}" # e.g. "src/config", "infrastructure/", "external/"
+
+enforcement:
+  lint_rules_block:
+    - "{{LINT_RULE_1}}" # e.g. "raw_color_values"
+    - "{{LINT_RULE_2}}" # e.g. "print_statements"
+  pre_commit_checks:
+    - "{{PRE_COMMIT_CHECK_1}}" # e.g. "strings_declared_in_constants"
+    - "{{PRE_COMMIT_CHECK_2}}" # e.g. "sdk_calls_in_services_only"
+
+frozen_module_banner: |
+  // 🚫 FROZEN MODULE!
+  // {{FROZEN_RULES_TEXT}}  // Guidance shown atop files that must not change.
+
+definition_of_done:
+  - "{{DOD_ITEM_1}}" # e.g. "All guardrails respected."
+  - "{{DOD_ITEM_2}}" # e.g. "Existing tests pass."
+  - "{{DOD_ITEM_3}}" # e.g. "New logic covered by tests."
+
+main_rule:
+  description: |
+    {{MAIN_RULE_DESCRIPTION}}  # One sentence summary of the overarching rule.
+  enforce:
+    - "{{MAIN_ENFORCEMENT_1}}" # e.g. "Reuse before reinventing."
+    - "{{MAIN_ENFORCEMENT_2}}" # e.g. "No raw inline values."
+    - "{{MAIN_ENFORCEMENT_3}}" # e.g. "app logic only in services/agents."
+
+tldr: |
+  {{TLDR_SUMMARY}}  # Short mantra, e.g. "Follow the manifest. No raw values."

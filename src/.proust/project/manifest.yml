@@ -1,0 +1,107 @@
+# =========================================
+#  Project Manifest Template
+# =========================================
+# 📝 TODO: Replace all {{PLACEHOLDER}} values with your project-specific information.
+# This file serves as the central source of truth for your project's current state.
+# Delete this comment block after completing the template.
+# =========================================
+
+# -------------------------------------------------
+#  Core Project Information
+# -------------------------------------------------
+project:
+  name: "{{PROJECT_NAME}}" # e.g. "TaskFlow Web App"
+  description: "{{PROJECT_DESCRIPTION}}" # e.g. "Team productivity web application with real-time collaboration"
+  version: "{{PROJECT_VERSION}}" # e.g. "1.0.0"
+  type: "{{PROJECT_TYPE}}" # e.g. "webapp", "api", "mobile-app", "cli-tool"
+
+# -------------------------------------------------
+#  Current Project State
+# -------------------------------------------------
+current_state:
+  milestone: "{{CURRENT_MILESTONE}}" # e.g. "M01"
+  milestone_name: "{{MILESTONE_NAME}}" # e.g. "Core Features"
+  sprint: "{{CURRENT_SPRINT}}" # e.g. "M01_S01"
+  sprint_name: "{{SPRINT_NAME}}" # e.g. "Foundation Setup"
+  last_updated: "{{LAST_UPDATED}}" # e.g. "2024-12-27T15:30:00Z"
+  status: "{{PROJECT_STATUS}}" # e.g. "in_progress", "planning", "on_hold"
+
+# -------------------------------------------------
+#  Technical Information
+# -------------------------------------------------
+technical:
+  language: "{{PRIMARY_LANGUAGE}}" # e.g. "python", "javascript", "typescript"
+  framework: "{{FRAMEWORK}}" # e.g. "django", "react", "nextjs", "fastapi"
+  architecture: "{{ARCHITECTURE_PATTERN}}" # e.g. "mvc", "clean-architecture", "microservices"
+  deployment: "{{DEPLOYMENT_TARGET}}" # e.g. "vercel", "aws", "docker", "heroku"
+  database: "{{DATABASE}}" # e.g. "postgresql", "mongodb", "sqlite"
+
+# -------------------------------------------------
+#  Progress Tracking
+# -------------------------------------------------
+milestones:
+  completed: [] # e.g. ["M01", "M02"]
+  active: ["{{ACTIVE_MILESTONE}}"] # e.g. ["M01"]
+  planned: [] # e.g. ["M02", "M03"]
+
+sprints:
+  completed: [] # e.g. ["M01_S01", "M01_S02"]
+  active: ["{{ACTIVE_SPRINT}}"] # e.g. ["M01_S01"]
+  planned: [] # e.g. ["M01_S02", "M01_S03"]
+
+# -------------------------------------------------
+#  Team Context
+# -------------------------------------------------
+team:
+  size: "{{TEAM_SIZE}}" # e.g. "solo_developer", "small_team", "5_developers"
+  timezone: "{{TIMEZONE}}" # e.g. "US_Pacific", "UTC", "flexible"
+  methodology: "{{METHODOLOGY}}" # e.g. "agile", "scrum", "kanban", "lean"
+
+# -------------------------------------------------
+#  Quality Gates
+# -------------------------------------------------
+quality:
+  test_coverage: "{{COVERAGE_TARGET}}" # e.g. 80
+  code_review: "{{REVIEW_PROCESS}}" # e.g. "required", "peer-review", "automated"
+  documentation: "{{DOC_STANDARD}}" # e.g. "comprehensive", "minimal", "inline-only"
+  validation: "{{VALIDATION_APPROACH}}" # e.g. "automated", "manual", "ci-cd"
+
+# -------------------------------------------------
+#  Dependencies
+# -------------------------------------------------
+dependencies:
+  # 📝 TODO: List your project's key dependencies
+  required:
+    - "{{DEPENDENCY_1}}" # e.g. "react>=18.0.0"
+    - "{{DEPENDENCY_2}}" # e.g. "express>=4.18.0"
+  development:
+    - "{{DEV_DEPENDENCY_1}}" # e.g. "jest>=29.0.0"
+    - "{{DEV_DEPENDENCY_2}}" # e.g. "eslint>=8.0.0"
+
+# -------------------------------------------------
+#  Goals and Success Metrics
+# -------------------------------------------------
+goals:
+  primary: "{{PRIMARY_GOAL}}" # e.g. "Launch MVP to beta users"
+  success_criteria:
+    - "{{SUCCESS_CRITERION_1}}" # e.g. "User registration flow works end-to-end"
+    - "{{SUCCESS_CRITERION_2}}" # e.g. "Performance under 200ms response time"
+    - "{{SUCCESS_CRITERION_3}}" # e.g. "Mobile responsive on all screen sizes"
+
+metrics:
+  velocity: "{{VELOCITY_MEASURE}}" # e.g. "story_points_per_sprint", "features_per_week"
+  quality: "{{QUALITY_MEASURE}}" # e.g. "bug_rate", "test_coverage", "user_satisfaction"
+  performance: "{{PERFORMANCE_MEASURE}}" # e.g. "page_load_time", "api_response_time"
+
+# -------------------------------------------------
+#  Project Notes
+# -------------------------------------------------
+notes: |
+  📝 TODO: Add any important context about your project:
+  - Key decisions made and rationale
+  - Technical constraints or limitations
+  - Business requirements or compliance needs
+  - Links to external documentation
+  - Team conventions or special considerations
+
+# 📝 TODO: After completing this template, delete all TODO markers and placeholder text.
